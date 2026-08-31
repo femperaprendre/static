@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Metodologia | Fem per Aprendre</title>
+<script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript">
+</script> <style> :root { --ink:#1e2448; --blue:#6278e8; --violet:#7546b6; --paper:#f7f8ff; --line:#e0e5f5; } * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; font-family:"DM Sans",sans-serif; color:var(--ink); background:var(--paper); } .site-shell { width:100%; overflow:hidden; } .topbar { background:linear-gradient(100deg,#607be9 0%,#7447b6 100%); } .hero { background:linear-gradient(112deg,#667deb 0%,#7245b4 100%); } .page-width { width:100%; max-width:1120px; margin:0 auto; padding-left:24px; padding-right:24px; } .glass-link { color:rgba(255,255,255,.85); transition:.2s ease; } .glass-link:hover,.glass-link:focus { color:white; outline:none; } .nav-anchor { color:#58617f; border-bottom:2px solid transparent; transition:.2s; } .nav-anchor:hover,.nav-anchor:focus { color:#694fc0; border-bottom-color:#694fc0; outline:none; } .section-card { background:white; border:1px solid #e7e9f5; box-shadow:0 12px 35px rgba(62,70,135,.08); border-radius:20px; } .section-marker { width:40px; height:40px; display:grid; place-items:center; border-radius:13px; background:#edeaff; color:#674ec6; } .table-scroll { overflow-x:auto; border:1px solid var(--line); border-radius:14px; } .evidence-table table { border-collapse:collapse; } .evidence-table th, .evidence-table td { border:1px solid #8f8f8f; } .evidence-table thead tr:nth-child(3) th:nth-child(4), .evidence-table thead tr:nth-child(3) th:nth-child(7), .evidence-table thead tr:nth-child(3) th:nth-child(10), .evidence-table tbody td:nth-child(4), .evidence-table tbody td:nth-child(7), .evidence-table tbody td:nth-child(10) { background:#d9d9d9; } table { width:100%; border-collapse:collapse; min-width:720px; } th { background:#edf0ff; color:#343c71; font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; text-align:left; } th,td { padding:15px 16px; border-bottom:1px solid var(--line); vertical-align:top; font-size:.9rem; line-height:1.55; } tr:last-child td { border-bottom:0; } tbody tr:nth-child(even) { background:#fbfbff; } .rubric-title { background:linear-gradient(90deg,#eef0ff,#f6ecff); color:#3d3775; font-weight:700; } .activity-sheet { background:#fffefb; border:1px solid #ddd6c8; border-radius:14px; box-shadow:inset 0 0 0 5px #faf8f0; }
+.grade-evidence-table table { min-width: 0; table-layout: fixed; }
+.grade-evidence-table th, .grade-evidence-table td {
+  padding: 10px 8px;
+  font-size: .78rem;
+  line-height: 1.35;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.grade-evidence-table th:first-child,
+.grade-evidence-table td:first-child { width: 12%; }
+.grade-evidence-table th:nth-child(11),
+.grade-evidence-table td:nth-child(11) { width: 10%; }
+.grade-evidence-table th:nth-child(12),
+.grade-evidence-table td:nth-child(12) { width: 8%; }
+@media (max-width: 900px) {
+  .grade-evidence-table table { min-width: 720px; }
+}
+ .notice { display:none; } .notice.show { display:flex; } @media(max-width:700px) { .page-width { padding-left:16px; padding-right:16px; } .desktop-nav { display:none; } .mobile-toggle { display:inline-flex; } .hero-copy { padding-top:48px; padding-bottom:50px; } } @media(min-width:701px) { .mobile-toggle { display:none; } .mobile-nav { display:none!important; } } /* Header unificat: mateix estil visual que programacio.html */ .site-main-header { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 600px; } </style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body data-template-id="__page-root">
+<div class="site-shell"> <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
+<div class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="bg-white bg-opacity-20 p-2 rounded-lg"> <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24"> <rect fill="currentColor" height="8" rx="1" width="16" x="4" y="10"></rect> <circle cx="8" cy="8" fill="currentColor" r="1.5"></circle> <circle cx="12" cy="8" fill="currentColor" r="1.5"></circle> <circle cx="16" cy="8" fill="currentColor" r="1.5"></circle> <rect fill="white" height="2" opacity="0.2" width="16" x="4" y="10"></rect> </svg>
+</div>
+<div>
+<h1 class="text-2xl font-bold">FemPerAprendre
+              </h1>
+<p class="text-sm opacity-90">Una proposta didàctica
+              </p>
+</div>
+</div> <!-- Desktop Navigation --> <nav class="hidden lg:flex space-x-6"> <a class="nav-link" href="index.html">Inici</a> <a class="nav-link" href="about.html">Sobre mi</a> <a class="nav-link" href="programacio.html">Programació</a> <a class="nav-link nav-active" href="metodologia.html">Metodologia</a> <a class="nav-link" href="recursos.html">Recursos</a> <a class="nav-link" href="auditoria.html">Autoria i llicència</a> <a class="nav-link" href="agraiments.html">Agraïments</a> <a class="nav-link" href="contact.html">Contacte</a> </nav> <!-- Mobile Menu Button --> <button aria-expanded="false" aria-label="Obrir menú" class="lg:hidden text-white" id="mobile-menu-btn" type="button"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> </svg> </button>
+</div> <!-- Mobile Navigation -->
+<div class="mobile-menu lg:hidden mt-4" id="mobile-menu">
+<div class="space-y-2"> <a class="block py-2 hover:text-blue-200" href="index.html">Inici</a> <a class="block py-2 hover:text-blue-200" href="about.html">Sobre mi</a> <a class="block py-2 hover:text-blue-200" href="programacio.html">Programació</a> <a class="block py-2 hover:text-blue-200" href="metodologia.html">Metodologia</a> <a class="block py-2 hover:text-blue-200" href="recursos.html">Recursos</a> <a class="block py-2 hover:text-blue-200" href="auditoria.html">Autoria i llicència</a> <a class="block py-2 hover:text-blue-200" href="agraiments.html">Agraïments</a> <a class="block py-2 hover:text-blue-200" href="contact.html">Contacte</a>
+</div>
+</div>
+</div> </header> <main> <section class="hero text-white" id="inici">
+<div class="page-width hero-copy py-14 md:py-16 text-center">
+<p class="canva-tag inline-block rounded-full bg-white/15 px-4 py-1.5 text-xs tracking-wide" data-template-id="hero-eyebrow">METODOLOGIA
+        </p>
+<h1 class="canva-text mt-5 font-bold text-4xl md:text-5xl leading-tight" data-template-id="hero-title">Metodologia
+        </h1>
+<p class="canva-text mt-4 max-w-2xl mx-auto text-white/85 leading-relaxed" data-template-id="hero-description">Una proposta per aprendre Biologia i Geologia construint, aplicant i avaluant models científics.
+        </p>
+</div> </section> <nav aria-label="Seccions de metodologia" class="bg-white border-b border-slate-100 sticky top-0 z-10 shadow-sm">
+<div class="page-width flex gap-5 md:gap-8 overflow-x-auto py-3 whitespace-nowrap text-sm"> <a class="nav-anchor no-underline pb-1" href="#metodologia">Estructura dels projectes</a> <a class="nav-anchor no-underline pb-1" href="#avaluacio">Avaluació</a> <a class="nav-anchor no-underline pb-1" href="#investigacio">Investigació científica</a>
+</div> </nav> <section class="page-width py-12" id="metodologia">
+<div class="canva-section section-card p-6 md:p-9" data-template-id="projects-section">
+<div class="flex items-start gap-4">
+<div class="section-marker"><em class="w-5 h-5" data-lucide="layers"></em>
+</div>
+<div>
+<p class="canva-text text-sm font-semibold text-violet-600" data-template-id="projects-kicker"> 
+            </p>
+<h2 class="canva-text font-bold text-3xl mt-1" data-template-id="projects-title">1. Estructura dels projectes
+            </h2>
+</div>
+</div>
+<p class="canva-text mt-6 leading-7" data-template-id="projects-intro">Els projectes de Fem per Aprendre segueixen una estructura comuna que he anat construint i refinant al llarg dels anys. Aquesta estructura pretén ajudar l'alumnat a construir els models científics necessaris, utilitzar-los en contextos diversos i, finalment, aplicar-los per resoldre un repte significatiu.
+        </p>
+<div class="table-scroll mt-7">
+<table>
+<thead>
+<tr>
+<th>Fase del projecte</th>
+<th>Què fem?</th>
+</tr> </thead> <tbody>
+<tr>
+<td><strong>Presentació</strong></td>
+<td>
+<div style="text-align: justify;"><span style="font-size: 0.9rem;">Es presenta el projecte i el gran repte que haurà de resoldre l'alumnat. També s'expliquen els objectius d'aprenentatge i, si escau, l’organització del projecte.</span>
+</div>
+<div style="text-align: justify;"><span style="font-size: 14.4px;">
+<br/></span>
+</div>
+<div style="text-align: justify;"><span style="font-size: 0.9rem;">Finalment, es realitza una activitat d'idees prèvies per identificar els models inicials de l'alumnat i adaptar l'ensenyament al seu punt de partida a través d’un KPSI.</span>
+</div></td>
+</tr>
+<tr>
+<td style="text-align: justify;"><strong>Fem per Aprendre ·</strong><span><span> <u>Fase 1. Construir el model científic</u></span></span></td>
+<td style="text-align: justify;">L'objectiu d'aquesta fase és ajudar l'alumnat a construir el model científic que necessitarà durant el projecte. Per aconseguir-ho es proposen activitats d'observació, experimentació, lectura de textos científics, interpretació d'imatges, anàlisi de dades, discussions guiades, entre altres.</td>
+</tr>
+<tr>
+<td style="text-align: justify;"><strong>Fem per Aprendre · </strong><span><u>Fase 2. Mobilitzar el model</u></span></td>
+<td style="text-align: justify; ">Una vegada construït el model, cal posar-lo en joc. L'alumnat interpreta situacions, explica fenòmens, resol casos, argumenta decisions o aplica el model a contextos nous. Aquestes activitats afavoreixen la consolidació dels aprenentatges i la seua transferència a situacions diferents.</td>
+</tr>
+<tr>
+<td style="text-align: justify; ">
+<p><strong>Gran repte </strong>
+</p>
+<p> 
+              </p>
+<p><strong>Reflexió final</strong>
+</p></td>
+<td>
+<div style="text-align: justify;"><span style="font-size: 0.9rem;">El projecte culmina amb una situació contextualitzada que dona sentit a tot el procés. L'alumnat integra els aprenentatges i demostra si és capaç d'utilitzar el model científic de manera autònoma per afrontar un repte complex i significatiu.</span>
+</div>
+<div style="text-align: justify;"><span style="font-size: 14.4px;">
+<br/></span>
+</div>
+<div style="text-align: justify;"><span style="font-size: 0.9rem;">Finalment, es duu a terme una activitat de reflexió final per veure com han canviat les idees respecte al KPSI.</span>
+</div></td>
+</tr> </tbody>
+</table>
+</div>
+</div> </section> <section class="page-width pb-12" id="avaluacio">
+<div class="canva-section section-card p-6 md:p-9" data-template-id="assessment-section">
+<div class="flex items-start gap-4">
+<div class="section-marker"><em class="w-5 h-5" data-lucide="clipboard-check"></em>
+</div>
+<div>
+<p class="canva-text text-sm font-semibold text-violet-600" data-template-id="assessment-kicker">
+<br/>
+</p>
+<h2 class="canva-text font-bold text-3xl mt-1" data-template-id="assessment-title">2. Com s'avalua?
+            </h2>
+</div>
+</div>
+<h3 class="canva-text font-bold text-2xl mt-9" data-template-id="rubric-title">2.1. Una única rúbrica per a tot el projecte
+        </h3>
+<div class="mt-5 rounded-xl bg-indigo-50 border border-indigo-100 p-5 text-sm leading-6">
+<p class="canva-text mt-7 leading-7" data-template-id="rubric-explanation" style="text-align: justify;">Cada projecte incorpora una <strong>única rúbrica d’avaluació</strong> que acompanya tot el procés d’aprenentatge. No hi ha una rúbrica diferent per a cada activitat o producte, sinó un únic instrument que recull allò que realment es pretén que l’alumnat aprenga al llarg del projecte. Només hi ha algun altre instrument d’avaluació de vegades en algun Gran Repte.
+          </p>
+<p class="canva-text mt-4 leading-7" data-template-id="rubric-explanation-two" style="text-align: justify;">La rúbrica es construeix a partir dels objectius d’aprenentatge del projecte, que alhora deriven dels criteris d’avaluació establerts pel Decret valencià. D’aquesta manera, l’avaluació manté una coherència entre el currículum, els objectius, les activitats i les evidències d’aprenentatge.
+          </p>
+<p style="text-align: justify;">Cada objectiu d’aprenentatge es descriu mitjançant quatre nivells d’assoliment, que representen diferents graus de domini d’un mateix aprenentatge. 
+          </p>
+<p> 
+          </p>
+<p><a class="inline-flex items-center justify-center rounded-md border border-indigo-500 px-5 py-3 text-indigo-600 font-semibold hover:bg-white transition-colors" href="https://mural.uv.es/manapu/recursos/Avaluaci%c3%b3%20Projecte%20Marjal%20Viva.pdf" rel="noopener noreferrer" style="font-family: Inter, sans-serif;" target="_blank">👉 Exemple de rúbrica</a>
+</p>
+<p><strong>Curs:</strong> 1r ESO
+            <br/><strong>Projecte:</strong> Marjal viva!
+          </p>
+</div>
+
+<p class="canva-text mt-7 leading-7" data-template-id="rubric-explanation">
+<br/>
+</p>
+<h3 class="canva-text font-bold text-2xl mt-10" data-template-id="objective-title">2.2. Com s’avalua un objectiu?
+        </h3>
+<p class="canva-text mt-4 leading-7" data-template-id="objective-intro">Posarem <strong>un exemple </strong>extret del projecte de 4r d’ESO Passat dels humans.
+        </p>
+<div class="table-scroll mt-5">
+<table>
+<thead>
+<tr>
+<th>Criteris del DECRET 66/2024</th>
+<th>No assolit</th>
+<th>Assolit</th>
+<th>Notable</th>
+<th>Excel·lent</th>
+</tr> </thead> <tbody>
+<tr class="rubric-title">
+<td colspan="5">Competència 9. Comprendre l'evolució geològica i biològica de la Terra al llarg del temps, estudiant les principals fites geològiques i evolutives.</td>
+</tr>
+<tr>
+<td><strong>Explicar l’actual biodiversitat com a resultat d’un procés de selecció natural</strong></td>
+<td>Encara no explica canvis evolutius a partir de la selecció natural amb algun error o amb analogies.</td>
+<td>Explica canvis evolutius a partir de la selecció natural amb analogies.</td>
+<td>Explica canvis evolutius a partir de la variabilitat genètica i la selecció natural però amb algun error o manca de vocabulari clau.</td>
+<td>Interpreta, fent ús de vocabulari clau, canvis evolutius a partir de la variabilitat genètica i la selecció natural.</td>
+</tr> </tbody>
+</table>
+</div>
+<p class="canva-text mt-7 leading-7" data-template-id="activity-intro">En aquest cas, després de treballar en classe la selecció natural durant unes sessions, es duu a terme una activitat avaluable, com la que podem veure a continuació:
+        </p> <article class="activity-sheet mt-5 p-6 md:p-8">
+<p class="font-bold">Activitat avaluable <span class="float-right font-normal">Projecte Passat dels humans 4t d’ESO_    Nom:__</span>
+</p>
+<p class="mt-6 leading-7">La papallona dels bedolls (Biston betularia), és una espècie de papallona que deu el seu nom a aquest arbre, el tronc del qual l'utilitza per camuflar-se davant dels depredadors. En Anglaterra, al segle XIX, amb la Revolució Industrial i la contaminació atmosfèrica que produïa la pols del carbó, es van enfosquir les escorces d’aquests arbres on hi viu aquesta papallona. Es van recollir les següents dades:
+        </p>
+<div class="mt-6 mb-6 flex justify-center">
+<img alt="Activitat sobre la papallona dels bedolls" class="w-full max-w-xl h-auto rounded-lg" src="https://mural.uv.es/manapu/recursos/Actpapallones.png"/>
+</div>
+<p class="mt-6 leading-7 font-medium">Redacta un text en què expliques l'origen de la variabilitat del color de les papallones, com ha evolucionat la població al llarg del temps i quina és la causa d'aquest canvi. Intenta fer servir les paraules ADN i proteïnes.
+        </p>
+<p class="mt-8 border-t pt-4">Nivell d'assoliment: ☐ NA ☐ AS ☐ AN ☐ AE
+        </p> </article>
+<p class="canva-text mt-7 leading-7" data-template-id="feedback-one"><strong>Quan corregisc l’activitat</strong>, no busque assignar una puntuació, sinó identificar quin nivell d’assoliment demostra l’alumnat respecte a l’objectiu d’aprenentatge que s’està avaluant.
+        </p>
+<p class="canva-text mt-4 leading-7" data-template-id="feedback-two">                Per exemple, si un alumne explica que les papallones canvien perquè «necessiten adaptar-se», sé que encara no ha construït                      correctament el model de selecció natural. (Nivell NA, No assolit encara)
+        </p>
+<p class="canva-text mt-4 leading-7" data-template-id="feedback-three">                En canvi, si relaciona la variabilitat genètica amb la supervivència diferencial dels individus, considere que ha assolit un nivell                       més elevat (AN). Si, a més, fa servir vocabulari clau (AE).
+        </p>
+<p> 
+        </p>
+<p> 
+        </p>
+<h3 class="canva-text font-bold text-2xl mt-10" data-template-id="grade-title">2.3. Com es calcula la qualificació?
+        </h3>
+<p class="canva-text mt-4 leading-7" data-template-id="grade-intro">Per a cada projecte, sol crear un registre d’evidències d’aprenentatge en un full de càlcul.
+        </p>
+<p><span style="color: rgb(0, 0, 0); font-family: Inter, sans-serif;"> </span><a class="inline-flex items-center justify-center rounded-md border border-indigo-500 px-5 py-3 text-indigo-600 font-semibold hover:bg-white transition-colors" href="https://mural.uv.es/manapu/recursos/Plantilla%20per%20recollir%20evid%c3%a8ncies.xlsx" rel="noopener noreferrer" style="font-family: Inter, sans-serif;" target="_blank">👉 Enllaç a la plantilla per recollir evidències</a>
+</p>
+<p class="canva-text mt-5 leading-7" data-template-id="grade-explanation">Al llarg del projecte, hi vaig anotant les notes de diferents evidències (activitats, proves escrites, pràctiques, debats...) relacionades amb cada objectiu d’aprenentatge. Per exemple, si Àngela ha assolit notablement una activitat de l’objectiu 1, escric un 3 en el registre. Una vegada revisades totes les evidències, determine el nivell d’assoliment final de cada objectiu.
+        </p>
+<div class="table-scroll evidence-table grade-evidence-table mt-5">
+<table>
+<thead>
+<tr>
+<th>Projecte</th>
+<th colspan="3">Obj 1</th>
+<th colspan="3">Obj 2</th>
+<th colspan="3">Obj 3</th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<th>Emergència climàtica</th>
+<th colspan="3"><em>model atmosfera</em></th>
+<th colspan="3"><em>causes</em></th>
+<th colspan="3"><em>Conseqüències</em></th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<th>Alumne</th>
+<th>act</th>
+<th>prova</th>
+<th>Nota</th>
+<th>act</th>
+<th>prova</th>
+<th>Nota</th>
+<th>dibuix</th>
+<th>prova</th>
+<th>Nota</th>
+<th>Mitjana notes objectius</th>
+<th>Qualificació</th>
+</tr> </thead> <tbody>
+<tr>
+<td><strong>Àngela</strong></td>
+<td class="bg-yellow-200">3</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>2,8</td>
+<td>7</td>
+</tr>
+<tr>
+<td><strong>Pau</strong></td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td></td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>2,8</td>
+<td>7</td>
+</tr>
+<tr>
+<td><strong>Marc</strong></td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td></td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>2,6</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Joana</strong></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td></td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>2,2</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>Arnau</strong></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td></td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>2,5</td>
+<td>2,7</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Pere</strong></td>
+<td class="bg-red-200">1</td>
+<td>2</td>
+<td class="bg-red-200">1</td>
+<td>2</td>
+<td></td>
+<td>2</td>
+<td>3</td>
+<td></td>
+<td>3</td>
+<td>1,6</td>
+<td class="bg-pink-100">4</td>
+</tr> </tbody>
+</table>
+</div>
+<p class="canva-text mt-7 leading-7" data-template-id="final-grade-explanation">La qualificació final del projecte s’obté a partir del nivell d’assoliment dels diferents objectius d’aprenentatge, aplicant una fórmula de conversió que genera la nota numèrica requerida per la normativa. En definitiva, la qualificació no es basa en percentatges, sinó en el grau d’assoliment de cada aprenentatge.
+        </p>
+<div class="table-scroll mt-5 max-w-md">
+<table style="min-width:430px">
+<thead>
+<tr>
+<th>Mitjana notes objectius</th>
+<th>Nota</th>
+</tr> </thead> <tbody>
+<tr>
+<td>&lt; 2,0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2,0 – 2,39</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2,4 – 2,79</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2,8 – 3,19</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3,2 – 3,69</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3,7 – 4,0</td>
+<td>9</td>
+</tr> </tbody>
+</table>
+</div>
+<p class="canva-text mt-6 leading-7" data-template-id="final-grade-reflection">Així, la nota final reflecteix el grau d’assoliment dels aprenentatges treballats durant el projecte. Es duu a terme d’aquesta manera perquè la Generalitat encara ens demana una única nota. <strong>En aquesta conversió, no solc posar una qualificació inferior a 4, ja que aquest valor ja representa un nivell «No assolit». De la mateixa manera, reserve el 10 per al final de curs, quan puc valorar el grau d’assoliment mostrat al llarg de tot el procés.</strong>
+        </p>
+</div> </section> <section class="page-width pb-14" id="investigacio">
+<div class="canva-section section-card p-6 md:p-9" data-template-id="research-section">
+<div class="flex items-start gap-4">
+<div class="section-marker"><em class="w-5 h-5" data-lucide="flask-conical"></em>
+</div>
+<div>
+<p class="canva-text text-sm font-semibold text-violet-600" data-template-id="research-kicker">3. Com està plantejada la investigació científica
+            </p>
+<h2 class="canva-text font-bold text-3xl mt-1" data-template-id="research-title">Aprendre a investigar de manera progressiva
+            </h2>
+</div>
+</div>
+<p class="canva-text mt-6 leading-7" data-template-id="research-intro">En tots els projectes, les activitats d’investigació segueixen una mateixa seqüència perquè l’alumnat aprenga a investigar de manera progressiva. Les primeres investigacions estan molt guiades pel professorat i, a mesura que avancen els cursos, les bastides es retiren fins que l’alumnat és capaç de dissenyar investigacions amb més autonomia.
+        </p>
+<p class="canva-text mt-4 leading-7" data-template-id="research-sequence">La seqüència que utilitze és la següent:
+        </p>
+<div class="table-scroll mt-6">
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Què fa l'alumnat</th>
+</tr> </thead> <tbody>
+<tr>
+<td><strong>1. Formular una pregunta investigable</strong></td>
+<td>Defineix una pregunta que puga respondre experimentalment a partir dels recursos disponibles.</td>
+</tr>
+<tr>
+<td><strong>2. Anticipar els possibles resultats</strong></td>
+<td>Identifica els possibles desenllaços abans de començar la investigació.</td>
+</tr>
+<tr>
+<td><strong>3. Formular una hipòtesi</strong></td>
+<td>Redacta una hipòtesi argumentada que responga la pregunta investigable.</td>
+</tr>
+<tr>
+<td><strong>4. Dissenyar l'experiment</strong></td>
+<td>Planifica els materials i el procediment experimental, controlant les variables necessàries.</td>
+</tr>
+<tr>
+<td><strong>5. Preparar la recollida de dades</strong></td>
+<td>Elabora les taules on registrarà les dades de la investigació.</td>
+</tr>
+<tr>
+<td><strong>6. Analitzar els resultats</strong></td>
+<td>Organitza, representa i interpreta les dades obtingudes per respondre la pregunta investigable.</td>
+</tr>
+<tr>
+<td><strong>7. Elaborar les conclusions</strong></td>
+<td>Contrasta la hipòtesi amb les evidències, valora les limitacions de l'experiment i explica els resultats utilitzant els models científics treballats.</td>
+</tr> </tbody>
+</table>
+</div>
+<p class="canva-text mt-7 leading-7" data-template-id="scaffold-text">Al llarg del procés, l’alumnat disposa de bastides (preguntes guia, iniciadors de frase...) que faciliten cadascuna d’aquestes etapes.
+        </p>
+<br/>
+</div> </section> </main> <!-- Footer --> <footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="max-w-6xl mx-auto">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center space-x-3 mb-4">
+<div class="bg-white bg-opacity-10 p-2 rounded-lg"> <svg aria-hidden="true" class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24"> <rect height="8" rx="1" width="16" x="4" y="10"></rect> <circle cx="8" cy="8" r="1.5"></circle> <circle cx="12" cy="8" r="1.5"></circle> <circle cx="16" cy="8" r="1.5"></circle> </svg>
+</div>
+<div>
+<h4 class="text-lg font-semibold">FemPerAprendre
+                  </h4>
+<p class="text-sm text-gray-400">Biologia i Geologia a l'ESO
+                  </p>
+</div>
+</div>
+<p class="text-gray-400 leading-relaxed text-sm"> Una proposta didàctica competencial basada en projectes i en valencià.
+              </p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">La proposta
+              </h4>
+<ul class="space-y-2 text-gray-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="programacio.html">Programació</a></li>
+<li><a class="hover:text-white transition-colors" href="metodologia.html">Metodologia</a></li>
+<li><a class="hover:text-white transition-colors" href="recursos.html">Recursos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">FemPerAprendre
+              </h4>
+<ul class="space-y-2 text-gray-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="index.html">Inici</a></li>
+<li><a class="hover:text-white transition-colors" href="about.html">Sobre mi</a></li>
+<li><a class="hover:text-white transition-colors" href="auditoria.html">Autoria i llicència</a></li>
+<li><a class="hover:text-white transition-colors" href="agraiments.html">Agraïments</a></li>
+<li><a class="hover:text-white transition-colors" href="contact.html">Contacte</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Recursos
+              </h4>
+<p class="text-gray-400 text-sm leading-relaxed"> Materials de Biologia i Geologia preparats per portar directament a l’aula.
+              </p>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-10 pt-6">
+<p class="text-center text-sm text-gray-400 leading-relaxed"> © Marina Navarro Puchol · Fem per Aprendre · Continguts originals sota llicència <a class="font-semibold text-gray-200 hover:text-white underline underline-offset-2" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" rel="noopener noreferrer" target="_blank"> CC BY-NC-SA 4.0 </a>, excepte quan s’indique el contrari.
+            </p>
+</div>
+</div>
+</div> </footer>
+</div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+
+      const menuButton = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('show');
+          menuButton.setAttribute('aria-expanded', String(mobileMenu.classList.contains('show')));
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('show');
+            menuButton.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      const notice = document.getElementById('resource-notice');
+      const registerLink = document.getElementById('register-link');
+      const scaffoldLink = document.getElementById('scaffold-link');
+      if (registerLink && notice) registerLink.addEventListener('click', () => notice.classList.add('show'));
+      if (scaffoldLink && notice) scaffoldLink.addEventListener('click', () => notice.classList.add('show'));
+    });
+    </script>
+<script id="fpa-mobile-menu-fix" type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    const oldButton = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!oldButton || !menu) return;
+
+    // El clon conserva HTML, classes i atributs, per&ograve; NO els listeners JS antics.
+    const button = oldButton.cloneNode(true);
+    oldButton.parentNode.replaceChild(button, oldButton);
+
+    menu.classList.remove('show');
+    button.setAttribute('aria-expanded', 'false');
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = menu.classList.toggle('show');
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('show');
+            button.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
+    </script>
+</body>
+</html>

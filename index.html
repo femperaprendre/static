@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FemPerAprendre - Recursos Educatius</title>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com">
+    </script> <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; } .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .dropdown { opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; } .dropdown.show { opacity: 1; visibility: visible; transform: translateY(0); } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 500px; } .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; } .fade-in:nth-child(1) { animation-delay: 0.1s; } .fade-in:nth-child(2) { animation-delay: 0.2s; } .fade-in:nth-child(3) { animation-delay: 0.3s; } .fade-in:nth-child(4) { animation-delay: 0.4s; } .fade-in:nth-child(5) { animation-delay: 0.5s; } @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } } .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden; } .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternunits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"></pattern></defs><rect width="100" height="100" fill="url(%23grain)"></svg>'); } .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #e5e7eb, #9ca3af, #e5e7eb); transform: translateX(-50%); } .timeline-item { position: relative; margin-bottom: 3rem; } .timeline-item:nth-child(odd) .timeline-content { margin-right: 50%; padding-right: 2rem; text-align: right; } .timeline-item:nth-child(even) .timeline-content { margin-left: 50%; padding-left: 2rem; text-align: left; } .timeline-dot { position: absolute; left: 50%; top: 1.5rem; width: 1rem; height: 1rem; border-radius: 50%; transform: translateX(-50%); z-index: 10; } @media (max-width: 768px) { .timeline-line { left: 1rem; } .timeline-item:nth-child(odd) .timeline-content, .timeline-item:nth-child(even) .timeline-content { margin-left: 2rem; margin-right: 0; padding-left: 1rem; padding-right: 0; text-align: left; } .timeline-dot { left: 1rem; } } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } /* Header unificat: mateix estil visual que programacio.html */ .site-main-header { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 600px; } </style>
+  </head>
+  <body class="bg-gray-50"> <!-- Header --> <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="bg-white bg-opacity-20 p-2 rounded-lg"> <svg class="w-8 h-8" viewBox="0 0 64 64" aria-hidden="true">
+  <path d="M32 5
+           L27 16 L20 10 L21 21
+           L10 17 L15 28 L5 30
+           L14 37 L8 45 L22 44
+           L21 55 L31 48
+           L32 59 L33 48
+           L43 55 L42 44
+           L56 45 L50 37
+           L59 30 L49 28
+           L54 17 L43 21
+           L44 10 L37 16 Z"
+        fill="none" stroke="white" stroke-width="3"
+        stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M32 47 L32 16
+           M32 31 L22 22
+           M32 34 L43 24
+           M32 39 L19 36
+           M32 40 L45 34"
+        fill="none" stroke="white" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold">FemPerAprendre
+            </h1>
+            <p class="text-sm opacity-90">Una proposta did&agrave;ctica
+            </p>
+          </div>
+        </div> <!-- Desktop Navigation --> <nav class="hidden lg:flex space-x-6"> <a href="index.html" class="nav-link nav-active">Inici</a> <a href="about.html" class="nav-link">Sobre mi</a> <a href="programacio.html" class="nav-link">Programaci&oacute;</a> <a href="metodologia.html" class="nav-link">Metodologia</a> <a href="recursos.html" class="nav-link">Recursos</a> <a href="auditoria.html" class="nav-link">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="nav-link">Agra&iuml;ments</a> <a href="contact.html" class="nav-link">Contacte</a> </nav> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="lg:hidden text-white" type="button" aria-label="Obrir men&uacute;" aria-expanded="false"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button>
+      </div> <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="mobile-menu lg:hidden mt-4">
+        <div class="space-y-2"> <a href="index.html" class="block py-2 hover:text-blue-200">Inici</a> <a href="about.html" class="block py-2 hover:text-blue-200">Sobre mi</a> <a href="programacio.html" class="block py-2 hover:text-blue-200">Programaci&oacute;</a> <a href="metodologia.html" class="block py-2 hover:text-blue-200">Metodologia</a> <a href="recursos.html" class="block py-2 hover:text-blue-200">Recursos</a> <a href="auditoria.html" class="block py-2 hover:text-blue-200">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="block py-2 hover:text-blue-200">Agra&iuml;ments</a> <a href="contact.html" class="block py-2 hover:text-blue-200">Contacte</a>
+        </div>
+      </div>
+    </div> </header> <!-- Hero Section --> <section id="inici" class="hero-section text-white py-14 md:py-16 relative">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-20 rounded-full px-4 py-2 mb-6"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l9 5-9 5-9-5 9-5zm0 10l7-3.889V15l-7 4-7-4V9.111L12 13z"></path> </svg> <span class="text-sm font-medium tracking-wide">Inici</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5"> Fem per Aprendre
+        </h1>
+        <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed"> Una proposta per ensenyar <strong>Biologia i Geologia</strong>&nbsp;a l'ESO a trav&eacute;s del treball per projectes i en valenci&agrave;.
+        </p>
+      </div>
+    </div> </section> <!-- Introduction Section --> <!-- Main Content --> <main class="container mx-auto px-6 py-12"> <!-- Objectius Section --> <section class="mb-16">
+    <div class="max-w-7xl mx-auto"> <!-- Main Title -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Objectius del web
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto"> Aquest espai t&eacute; dos objectius principals
+        </p>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-8"> <!-- Card 1: Compartir materials -->
+        <div class="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl shadow-lg p-8 text-gray-800 card-hover fade-in flex-1">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 mx-auto mb-4 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center"> <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewbox="0 0 24 24"> <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"></path> </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">1. Compartir una proposta did&agrave;ctica
+            </h3>
+          </div>
+          <div class="space-y-4 text-gray-700">
+            <p class="leading-relaxed">Aquest espai t&eacute; la voluntat de posar a l&rsquo;abast de tothom, de forma gratu&iuml;ta, una <strong data-start="182" data-end="213">proposta did&agrave;ctica completa</strong> per a l&rsquo;ensenyament de la <strong data-start="240" data-end="266">Biologia i la Geologia</strong> de <strong data-start="270" data-end="287">1r a 4t d&rsquo;ESO</strong>, amb l&rsquo;objectiu de contribuir a una educaci&oacute; p&uacute;blica, de qualitat i en valenci&agrave;.
+            </p>
+            <div class="mt-6 p-4 bg-white bg-opacity-60 rounded-lg">
+              <p class="font-semibold text-gray-800 mb-2">No pret&eacute;n ser un banc de recursos. El web proposa una <strong data-start="429" data-end="477"><u>seq&uuml;&egrave;ncia did&agrave;ctica formada per 12 projectes</u></strong>, dissenyats i millorats al llarg dels anys, des d&rsquo;una mirada competencial i amb tots els materials necessaris per portar-los directament a l&rsquo;aula
+              </p>
+              <p><strong data-start="111" data-end="149"><u>Atenci&oacute;:</u> s&oacute;n projectes replicables</strong> en la majoria dels nostres instituts, ja que per dur-los a terme nom&eacute;s necessites paper, boli, un projector d&rsquo;aula i poder fer fotoc&ograve;pies.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+              </p>
+              <ul class="space-y-2">
+              </ul>
+            </div>
+          </div>
+        </div> <!-- Card 2: Enfocament competencial -->
+        <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl shadow-lg p-8 text-gray-800 card-hover fade-in flex-1">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 mx-auto mb-4 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center"> <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewbox="0 0 24 24"> <path d="M12,3L1,9L12,15L21,12V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"></path> </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">2. Promoure una altra manera d'ensenyar ci&egrave;ncies
+            </h3>
+          </div>
+          <div class="space-y-4 text-gray-700"> <font size="4"><span id="docs-internal-guid-71a951ef-7fff-527c-8dcd-215c9f168f4f">
+            <p dir="ltr" style="line-height:1.38;margin-top:12pt;margin-bottom:12pt;"><span id="docs-internal-guid-61987890-7fff-fe20-b0f2-7753e71ae77c"></span>
+            </p>
+            <p dir="ltr" style="line-height:1.38;margin-top:12pt;margin-bottom:12pt;"><span style="font-family: Arial, sans-serif; color: rgb(0, 0, 0); background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">La proposta articula l&rsquo;aprenentatge de les ci&egrave;ncies a partir de tres grans eixos:&nbsp;</span>
+            </p></span> </font>
+            <div class="mt-6 p-4 bg-white bg-opacity-60 rounded-lg">
+              <p class="font-semibold text-gray-800 mb-2"><font face="Arial, sans-serif"><span style="white-space-collapse: preserve;">&nbsp;</span></font>
+              </p>
+              <p class="font-semibold text-gray-800 mb-2"><span style="background-color: transparent; font-weight: 700; white-space: pre-wrap; font-family: Arial, sans-serif;"><span><em><u>Construir models cient&iacute;fics.</u> </em></span></span>A partir d&rsquo;observacions, dades, evid&egrave;ncies, lectures o explicacions guiades, l&rsquo;alumnat construeix models que li permeten <span data-start="307" data-end="373">explicar fen&ograve;mens i fer prediccions sobre el m&oacute;n que l&rsquo;envolta</span>.
+              </p>
+              <p class="font-semibold text-gray-800 mb-2"><span style="background-color: transparent; white-space: pre-wrap; font-family: Arial, sans-serif;"></span><span style="background-color: transparent; font-weight: 700; white-space: pre-wrap; font-family: Arial, sans-serif;"><u><em>Desenvolupar criteri cient&iacute;fic.</em></u> </span><span style="background-color: transparent; white-space: pre-wrap; font-family: Arial, sans-serif;">L'alumnat apr&eacute;n a interpretar dades, valorar evid&egrave;ncies i fonts, argumentar i prendre decisions fonamentades.</span>
+              </p>
+              <p class="font-semibold text-gray-800 mb-2"><span style="background-color: transparent; white-space: pre-wrap; font-family: Arial, sans-serif;"></span><span style="background-color: transparent; font-weight: 700; white-space: pre-wrap; font-family: Arial, sans-serif;"><u><em>Aprendre a investigar.</em></u> </span><span style="background-color: transparent; white-space: pre-wrap; font-family: Arial, sans-serif;">Els projectes incorporen xicotetes recerques en qu&egrave; l'alumnat formula preguntes, planteja hip&ograve;tesis, recull dades i elabora conclusions.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> </section> <!-- Projects by Level --> <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Recursos per nivells
+        </h3>
+        <p class="text-gray-600">Projectes adaptats a cada curs d'ESO
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8"> <!-- 1r ESO -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center card-hover">
+          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"> <span class="text-3xl font-bold text-blue-600">1r</span>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-800 mb-4">Projectes 1r ESO Bio i Geo
+          </h4>
+          <p class="text-gray-600 mb-6">Materials i activitats adaptades per iniciar l'aprenentatge competencial.
+          </p> <a href="recursos.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block"> Veure projectes </a>
+        </div> <!-- 3r ESO -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center card-hover">
+          <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"> <span class="text-3xl font-bold text-green-600">3r</span>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-800 mb-4">Projectes 3r ESO Bio i Geo
+          </h4>
+          <p class="text-gray-600 mb-6">Projectes de complexitat interm&egrave;dia per consolidar compet&egrave;ncies.
+          </p> <a href="recursos.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block"> Veure projectes </a>
+        </div> <!-- 4t ESO -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center card-hover">
+          <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"> <span class="text-3xl font-bold text-purple-600">4t</span>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-800 mb-4">Projectes 4t ESO Bio i Geo
+          </h4>
+          <p class="text-gray-600 mb-6">Projectes avan&ccedil;ats per preparar l'etapa postobligat&ograve;ria.
+          </p> <a href="recursos.html" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block"> Veure projectes</a>
+        </div>
+      </div>
+    </div></section><section class="py-16 gradient-bg text-white">
+    <div class="container mx-auto px-6 text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="text-xl mb-8 opacity-90" style="text-align: center; "><font size="6">FemPerAprendre</font>
+        </p>
+        <p style="text-align: center; "><strong style="background-color: initial;"><font size="4" style="color: rgb(255, 255, 255);">Una proposta did&agrave;ctica competencial i en valenci&agrave;.</font></strong>
+        </p>
+        <p>&nbsp;
+        </p>
+      </div>
+    </div></section><footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <p class="text-sm text-gray-400">
+                <br />
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-10 pt-6">
+          <p class="text-center text-sm text-gray-400 leading-relaxed"> &copy; Marina Navarro Puchol &middot; Fem per Aprendre &middot; Continguts originals sota llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-200 hover:text-white underline underline-offset-2"> CC BY-NC-SA 4.0 </a>, excepte quan s&rsquo;indique el contrari.
+          </p>
+        </div>
+      </div>
+    </div> </footer>
+    <script type="text/javascript">
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.remove('show');
+            });
+        });
+
+        // Desktop dropdown functionality
+        document.querySelectorAll('.group').forEach(group => {
+            const dropdown = group.querySelector('.dropdown');
+
+            group.addEventListener('mouseenter', () => {
+                dropdown.classList.add('show');
+            });
+
+            group.addEventListener('mouseleave', () => {
+                dropdown.classList.remove('show');
+            });
+        });
+
+        // Alert for navigation (since sections don't exist yet)
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                const sectionName = href.replace('#', '').replace('-', ' ');
+                console.log('Navegant a: ' + sectionName);
+            });
+        });
+    </script>
+    <script type="text/javascript">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'969fb103307c7a57',t:'MTc1NDMyNzY3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='https://disco.uv.es/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+    </script>
+    <script type="text/javascript" id="fpa-mobile-menu-fix">
+document.addEventListener('DOMContentLoaded', function () {
+    const oldButton = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!oldButton || !menu) return;
+
+    // El clon conserva HTML, classes i atributs, per&ograve; NO els listeners JS antics.
+    const button = oldButton.cloneNode(true);
+    oldButton.parentNode.replaceChild(button, oldButton);
+
+    menu.classList.remove('show');
+    button.setAttribute('aria-expanded', 'false');
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = menu.classList.toggle('show');
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('show');
+            button.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
+    </script> </main>
+  </body>
+</html>

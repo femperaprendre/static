@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursos | FemPerAprendre</title>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com">
+    </script> <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; } .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .dropdown { opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; } .dropdown.show { opacity: 1; visibility: visible; transform: translateY(0); } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 500px; } .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; } .fade-in:nth-child(1) { animation-delay: 0.1s; } .fade-in:nth-child(2) { animation-delay: 0.2s; } .fade-in:nth-child(3) { animation-delay: 0.3s; } .fade-in:nth-child(4) { animation-delay: 0.4s; } .fade-in:nth-child(5) { animation-delay: 0.5s; } @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } } .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden; } .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternunits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"></pattern></defs><rect width="100" height="100" fill="url(%23grain)"></svg>'); } .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #e5e7eb, #9ca3af, #e5e7eb); transform: translateX(-50%); } .timeline-item { position: relative; margin-bottom: 3rem; } .timeline-item:nth-child(odd) .timeline-content { margin-right: 50%; padding-right: 2rem; text-align: right; } .timeline-item:nth-child(even) .timeline-content { margin-left: 50%; padding-left: 2rem; text-align: left; } .timeline-dot { position: absolute; left: 50%; top: 1.5rem; width: 1rem; height: 1rem; border-radius: 50%; transform: translateX(-50%); z-index: 10; } @media (max-width: 768px) { .timeline-line { left: 1rem; } .timeline-item:nth-child(odd) .timeline-content, .timeline-item:nth-child(even) .timeline-content { margin-left: 2rem; margin-right: 0; padding-left: 1rem; padding-right: 0; text-align: left; } .timeline-dot { left: 1rem; } } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } /* Header unificat: mateix estil visual que programacio.html */ .site-main-header { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 600px; } </style>
+  </head>
+  <body class="bg-gray-50"> <!-- Header --> <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="bg-white bg-opacity-20 p-2 rounded-lg"> <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" aria-hidden="true"> <rect x="4" y="10" width="16" height="8" rx="1" fill="currentColor"></rect> <circle cx="8" cy="8" r="1.5" fill="currentColor"></circle> <circle cx="12" cy="8" r="1.5" fill="currentColor"></circle> <circle cx="16" cy="8" r="1.5" fill="currentColor"></circle> <rect x="4" y="10" width="16" height="2" fill="white" opacity="0.2"></rect> </svg>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold">FemPerAprendre
+            </h1>
+            <p class="text-sm opacity-90">Una proposta did&agrave;ctica
+            </p>
+          </div>
+        </div> <!-- Desktop Navigation --> <nav class="hidden lg:flex space-x-6"> <a href="index.html" class="nav-link">Inici</a> <a href="about.html" class="nav-link">Sobre mi</a> <a href="programacio.html" class="nav-link">Programaci&oacute;</a> <a href="metodologia.html" class="nav-link">Metodologia</a> <a href="recursos.html" class="nav-link nav-active">Recursos</a> <a href="auditoria.html" class="nav-link">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="nav-link">Agra&iuml;ments</a> <a href="contact.html" class="nav-link">Contacte</a> </nav> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="lg:hidden text-white" type="button" aria-label="Obrir men&uacute;" aria-expanded="false"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button>
+      </div> <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="mobile-menu lg:hidden mt-4">
+        <div class="space-y-2"> <a href="index.html" class="block py-2 hover:text-blue-200">Inici</a> <a href="about.html" class="block py-2 hover:text-blue-200">Sobre mi</a> <a href="programacio.html" class="block py-2 hover:text-blue-200">Programaci&oacute;</a> <a href="metodologia.html" class="block py-2 hover:text-blue-200">Metodologia</a> <a href="recursos.html" class="block py-2 hover:text-blue-200">Recursos</a> <a href="auditoria.html" class="block py-2 hover:text-blue-200">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="block py-2 hover:text-blue-200">Agra&iuml;ments</a> <a href="contact.html" class="block py-2 hover:text-blue-200">Contacte</a>
+        </div>
+      </div>
+    </div> </header> <!-- Hero Section --> <section class="hero-section text-white py-14 md:py-16 relative">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-20 rounded-full px-4 py-2 mb-6"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"></path> </svg> <span class="text-sm font-medium tracking-wide">Recursos</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">Recursos did&agrave;ctics
+        </h1>
+        <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">Els projectes estan dissenyats i seq&uuml;enciats d&rsquo;acord amb el curr&iacute;culum valenci&agrave; i inclouen materials de creaci&oacute; pr&ograve;pia, adaptacions d&rsquo;altres docents i recursos elaborats durant la meua etapa a l&rsquo;Institut Can Periquet.
+        </p>
+      </div>
+    </div> </section> <main class="py-16 bg-[#f5f6ff]">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto"> <!-- Introducci&oacute; --> <section class="mb-10">
+        <p class="text-sm md:text-base font-bold uppercase tracking-[0.16em] text-indigo-500 mb-4">&nbsp;&nbsp;
+        </p></section><section class="mb-10">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Qu&egrave; inclou cada projecte?
+        </h3>
+        <p class="text-gray-600 mb-6">En tots hi ha la mateixa estructura de carpetes per trobar r&agrave;pidament all&ograve; que necessites.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"> <article class="rounded-xl bg-indigo-50 p-6 shadow-sm border border-indigo-100">
+          <div class="text-indigo-600 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"></path> </svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">📁 Carpeta 1. Presentaci&oacute; del projecte
+          </h4>
+          <p class="text-sm text-gray-700 leading-relaxed"> Inclou la presentaci&oacute; inicial, el gran repte, els objectius d&rsquo;aprenentatge, l&rsquo;organitzaci&oacute; del treball i les activitats d&rsquo;idees pr&egrave;vies (KPSI).
+          </p> </article> <article class="rounded-xl bg-emerald-50 p-6 shadow-sm border border-emerald-100">
+          <div class="text-emerald-700 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16v11H4V5zm4 15h8M12 16v4"></path> </svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">📁 Carpeta 2. Fem per Aprendre
+          </h4>
+          <p class="text-sm text-gray-700 leading-relaxed"> Cont&eacute; les activitats de les fases Construir el model i Mobilitzar el model, amb materials per desenvolupar el projecte a l&rsquo;aula. Estan pensades <u>per ser projectades a classe</u>.
+          </p> </article> <article class="rounded-xl bg-amber-50 p-6 shadow-sm border border-amber-100">
+          <div class="text-amber-700 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 21V5m0 0c5-3 9 3 14 0v9c-5 3-9-3-14 0"></path> </svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">📁 Carpeta 3. Gran repte
+          </h4>
+          <p class="text-sm text-gray-700 leading-relaxed"> Recull els materials necessaris perqu&egrave; l&rsquo;alumnat desenvolupe el producte final o resolga el gran repte que dona sentit al projecte.
+          </p> </article> <article class="rounded-xl bg-violet-50 p-6 shadow-sm border border-violet-100">
+          <div class="text-violet-700 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 11l2 2 4-4m4 2a7 7 0 11-14 0 7 7 0 0114 0z"></path> </svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">📁 Carpeta 4. Avaluaci&oacute;
+          </h4>
+          <p class="text-sm text-gray-700 leading-relaxed"> Inclou tots els instruments d&rsquo;avaluaci&oacute;: la r&uacute;brica, les proves escrites i les activitats de rep&agrave;s.
+          </p> </article> <article class="rounded-xl bg-teal-50 p-6 shadow-sm border border-teal-100">
+          <div class="text-teal-700 mb-4"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3h7l3 3v15H7V3zm7 0v4h4"></path> </svg>
+          </div>
+          <h4 class="font-bold text-gray-900 mb-2">📁 Carpeta 5. Activitats en PDF
+          </h4>
+          <p class="text-sm text-gray-700 leading-relaxed"> Inclou les mateixes activitats de la carpeta 2, <u>en format imp</u><u><span>rimible</span> i sense les respostes</u>.
+          </p> </article>
+        </div> </section> <!-- Nota --> <section class="mb-12">
+        <div class="rounded-xl bg-gradient-to-r from-indigo-100 to-emerald-100 px-6 py-5 text-sm text-gray-700 leading-relaxed"> L&rsquo;objectiu &eacute;s que, una vegada descarregat el projecte, no hages de preparar pr&agrave;cticament res m&eacute;s.&nbsp;
+        </div> </section>
+        <div class="border-t border-gray-300 mb-10">
+        </div> <!-- Projectes --> <section>
+        <p>&nbsp;
+        </p>
+        <p>&nbsp;
+        </p>
+        <p class="text-sm md:text-base font-bold uppercase tracking-[0.16em] text-indigo-500 mb-4">Projectes per curs
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5"> Els projectes
+        </h2>
+        <p class="text-gray-700 leading-relaxed mb-6 max-w-4xl"> Fes <strong>click</strong> en cada curs i descarrega els materials directament des d&rsquo;aquest espai. <strong>De forma totalment gratu&iuml;ta! </strong>
+        </p>
+        <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div class="mt-8">
+            <div class="grid md:grid-cols-3 gap-5 mb-8"> <button type="button" class="course-btn bg-indigo-50 border border-indigo-100 rounded-2xl p-6 text-left shadow-sm hover:shadow-lg transition-all" data-title="Materials de 1r ESO" data-url="https://e.pcloud.link/publink/show?code=pSty6alK">
+              <div class="text-3xl mb-3">🌿
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-indigo-600 mb-2">Projectes
+              </p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">1r ESO
+              </h3>
+              <p class="text-sm text-gray-600">&Eacute;ssers vius &middot; Explorant l&rsquo;univers &middot; Emerg&egrave;ncia clim&agrave;tica &middot; Marjal Viva
+              </p> </button> <button type="button" class="course-btn bg-emerald-50 border border-emerald-100 rounded-2xl p-6 text-left shadow-sm hover:shadow-lg transition-all" data-title="Materials de 3r ESO" data-url="https://e.pcloud.link/publink/show?code=tuty6alK">
+              <div class="text-3xl mb-3">🧠
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-emerald-700 mb-2">Projectes
+              </p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">3r ESO
+              </h3>
+              <p class="text-sm text-gray-600">Salut i bon profit &middot; Drogues i neurones &middot; Vacunes? &middot; Sexualitat
+              </p> </button> <button type="button" class="course-btn bg-amber-50 border border-amber-100 rounded-2xl p-6 text-left shadow-sm hover:shadow-lg transition-all" data-title="Materials de 4t ESO" data-url="https://e.pcloud.link/publink/show?code=HSty6alK">
+              <div class="text-3xl mb-3">🧬
+              </div>
+              <p class="text-xs uppercase tracking-wider font-bold text-amber-700 mb-2">Projectes
+              </p>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">4t ESO
+              </h3>
+              <p class="text-sm text-gray-600">Paisatges &middot; Gen&egrave;tica i c&agrave;ncer &middot; Passat dels humans &middot; Fem recerca!
+              </p> </button>
+            </div> <section id="course-frame-section" class="hidden mb-4">
+            <div class="mb-4">
+              <p class="text-sm font-bold uppercase tracking-[0.16em] text-purple-600">Materials
+              </p>
+              <h3 id="course-frame-title" class="text-2xl md:text-3xl font-bold text-gray-900">Tria un curs per veure els materials
+              </h3>
+            </div>
+            <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"> <iframe id="course-frame" width="100%" height="600px" class="hidden"> </iframe>
+            </div> </section>
+          </div>
+          <script type="text/javascript" id="fpa-course-frame-switcher">
+document.addEventListener('DOMContentLoaded', function () {
+    const frame = document.getElementById('course-frame');
+    const title = document.getElementById('course-frame-title');
+    const buttons = document.querySelectorAll('.course-btn');
+    const frameSection = document.getElementById('course-frame-section');
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            frameSection.classList.remove('hidden');
+            frame.classList.remove('hidden');
+            frame.src = button.dataset.url;
+            title.textContent = button.dataset.title;
+
+            buttons.forEach(function (item) {
+                item.classList.remove('border-2', 'border-indigo-400', 'border-emerald-400', 'border-amber-400');
+                item.classList.add('border');
+            });
+
+            button.classList.remove('border');
+            button.classList.add('border-2');
+
+            if (button.dataset.title.includes('1r')) button.classList.add('border-indigo-400');
+            if (button.dataset.title.includes('3r')) button.classList.add('border-emerald-400');
+            if (button.dataset.title.includes('4t')) button.classList.add('border-amber-400');
+
+            frame.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+});
+          </script>
+        </div> </section>
+      </div>
+    </div> </main> <!-- Footer --> <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10"> <!-- Marca -->
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="bg-white bg-opacity-10 p-2 rounded-lg"> <svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24" aria-hidden="true"> <rect x="4" y="10" width="16" height="8" rx="1"></rect> <circle cx="8" cy="8" r="1.5"></circle> <circle cx="12" cy="8" r="1.5"></circle> <circle cx="16" cy="8" r="1.5"></circle> </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold">FemPerAprendre
+                </h4>
+                <p class="text-sm text-gray-400">Biologia i Geologia a l'ESO
+                </p>
+              </div>
+            </div>
+            <p class="text-gray-400 leading-relaxed text-sm"> Una proposta did&agrave;ctica competencial basada en projectes i en valenci&agrave;.
+            </p>
+          </div> <!-- La proposta -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">La proposta
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="programacio.html" class="hover:text-white transition-colors">Programaci&oacute;</a></li>
+              <li><a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a></li>
+              <li><a href="recursos.html" class="hover:text-white transition-colors">Recursos</a></li>
+            </ul>
+          </div> <!-- FemPerAprendre -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">FemPerAprendre
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
+              <li><a href="about.html" class="hover:text-white transition-colors">Sobre mi</a></li>
+              <li><a href="auditoria.html" class="hover:text-white transition-colors">Autoria i llic&egrave;ncia</a></li>
+              <li><a href="agraiments.html" class="hover:text-white transition-colors">Agra&iuml;ments</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contacte</a></li>
+            </ul>
+          </div> <!-- Recursos -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Recursos
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed"> Materials de Biologia i Geologia preparats per portar directament a l&rsquo;aula.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-10 pt-6">
+          <p class="text-center text-sm text-gray-400 leading-relaxed"> &copy; Marina Navarro Puchol &middot; Fem per Aprendre &middot; Continguts originals sota llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-200 hover:text-white underline underline-offset-2"> CC BY-NC-SA 4.0 </a>, excepte quan s&rsquo;indique el contrari.
+          </p>
+        </div>
+      </div>
+    </div> </footer>
+    <script type="text/javascript">
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.remove('show');
+            });
+        });
+
+        // Desktop dropdown functionality
+        document.querySelectorAll('.group').forEach(group => {
+            const dropdown = group.querySelector('.dropdown');
+
+            group.addEventListener('mouseenter', () => {
+                dropdown.classList.add('show');
+            });
+
+            group.addEventListener('mouseleave', () => {
+                dropdown.classList.remove('show');
+            });
+        });
+    </script>
+    <script type="text/javascript" id="fpa-mobile-menu-fix">
+document.addEventListener('DOMContentLoaded', function () {
+    const oldButton = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!oldButton || !menu) return;
+
+    // El clon conserva HTML, classes i atributs, per&ograve; NO els listeners JS antics.
+    const button = oldButton.cloneNode(true);
+    oldButton.parentNode.replaceChild(button, oldButton);
+
+    menu.classList.remove('show');
+    button.setAttribute('aria-expanded', 'false');
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const isOpen = menu.classList.toggle('show');
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('show');
+            button.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
+    </script>
+  </body>
+</html>
