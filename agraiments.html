@@ -1,319 +1,136 @@
-
 <!DOCTYPE html>
-<html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agraïments | FemPerAprendre</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #e0e7ff;
-        }
-        .dropdown {
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-        .dropdown.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        .mobile-menu.show {
-            max-height: 500px;
-        }
-                .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        .fade-in:nth-child(1) { animation-delay: 0.1s; }
-        .fade-in:nth-child(2) { animation-delay: 0.2s; }
-        .fade-in:nth-child(3) { animation-delay: 0.3s; }
-        .fade-in:nth-child(4) { animation-delay: 0.4s; }
-        .fade-in:nth-child(5) { animation-delay: 0.5s; }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        }
-        
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #e5e7eb, #9ca3af, #e5e7eb);
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: 50%;
-            padding-right: 2rem;
-            text-align: right;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 50%;
-            padding-left: 2rem;
-            text-align: left;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 1.5rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-line {
-                left: 1rem;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 2rem;
-                margin-right: 0;
-                padding-left: 1rem;
-                padding-right: 0;
-                text-align: left;
-            }
-            
-            .timeline-dot {
-                left: 1rem;
-            }
-        }
-
-        .nav-active {
-            border-bottom: 2px solid #fde047;
-            padding-bottom: 0.25rem;
-            color: white;
-        }
-    
-        /* Header unificat: mateix estil visual que programacio.html */
-        .site-main-header { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .nav-link { position: relative; transition: color 0.3s ease; }
-        .nav-link:hover { color: #e0e7ff; }
-        .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; }
-        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .mobile-menu.show { max-height: 600px; }
-
-    </style>
-</head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white bg-opacity-20 p-2 rounded-lg">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <rect x="4" y="10" width="16" height="8" rx="1" fill="currentColor"/>
-                            <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
-                            <circle cx="12" cy="8" r="1.5" fill="currentColor"/>
-                            <circle cx="16" cy="8" r="1.5" fill="currentColor"/>
-                            <rect x="4" y="10" width="16" height="2" fill="white" opacity="0.2"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold">FemPerAprendre</h1>
-                        <p class="text-sm opacity-90">Recursos i formació docent</p>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex space-x-6">
-                    <a href="index.html" class="nav-link">Inici</a>
-                    <a href="about.html" class="nav-link">Sobre mi</a>
-                    <a href="programacio.html" class="nav-link">Programació</a>
-                    <a href="metodologia.html" class="nav-link">Metodologia</a>
-                    <a href="recursos.html" class="nav-link">Recursos</a>
-                    <a href="auditoria.html" class="nav-link">Autoria i llicència</a>
-                    <a href="agraiments.html" class="nav-link nav-active">Agraïments</a>
-                    <a href="contact.html" class="nav-link">Contacte</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white" type="button" aria-label="Obrir menú" aria-expanded="false">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="mobile-menu lg:hidden mt-4">
-                <div class="space-y-2">
-                    <a href="index.html" class="block py-2 hover:text-blue-200">Inici</a>
-                    <a href="about.html" class="block py-2 hover:text-blue-200">Sobre mi</a>
-                    <a href="programacio.html" class="block py-2 hover:text-blue-200">Programació</a>
-                    <a href="metodologia.html" class="block py-2 hover:text-blue-200">Metodologia</a>
-                    <a href="recursos.html" class="block py-2 hover:text-blue-200">Recursos</a>
-                    <a href="auditoria.html" class="block py-2 hover:text-blue-200">Autoria i llicència</a>
-                    <a href="agraiments.html" class="block py-2 hover:text-blue-200">Agraïments</a>
-                    <a href="contact.html" class="block py-2 hover:text-blue-200">Contacte</a>
-                </div>
-            </div>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agra&iuml;ments | FemPerAprendre</title>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com">
+    </script> <style> @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); body { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; } .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .dropdown { opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; } .dropdown.show { opacity: 1; visibility: visible; transform: translateY(0); } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 500px; } .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards; } .fade-in:nth-child(1) { animation-delay: 0.1s; } .fade-in:nth-child(2) { animation-delay: 0.2s; } .fade-in:nth-child(3) { animation-delay: 0.3s; } .fade-in:nth-child(4) { animation-delay: 0.4s; } .fade-in:nth-child(5) { animation-delay: 0.5s; } @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } } .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden; } .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternunits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"></pattern></defs><rect width="100" height="100" fill="url(%23grain)"></svg>'); } .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #e5e7eb, #9ca3af, #e5e7eb); transform: translateX(-50%); } .timeline-item { position: relative; margin-bottom: 3rem; } .timeline-item:nth-child(odd) .timeline-content { margin-right: 50%; padding-right: 2rem; text-align: right; } .timeline-item:nth-child(even) .timeline-content { margin-left: 50%; padding-left: 2rem; text-align: left; } .timeline-dot { position: absolute; left: 50%; top: 1.5rem; width: 1rem; height: 1rem; border-radius: 50%; transform: translateX(-50%); z-index: 10; } @media (max-width: 768px) { .timeline-line { left: 1rem; } .timeline-item:nth-child(odd) .timeline-content, .timeline-item:nth-child(even) .timeline-content { margin-left: 2rem; margin-right: 0; padding-left: 1rem; padding-right: 0; text-align: left; } .timeline-dot { left: 1rem; } } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } /* Header unificat: mateix estil visual que programacio.html */ .site-main-header { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 600px; } </style>
+  </head>
+  <body class="bg-gray-50"> <!-- Header --> <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 flex items-center justify-center flex-shrink-0"> <img src="https://mural.uv.es/manapu/recursos/Logo1.png" alt="FemPerAprendre" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold">FemPerAprendre
+            </h1>
+            <p class="text-sm opacity-90">Biologia i Geologia per a l&rsquo;ESO
+            </p>
+          </div>
+        </div> <!-- Desktop Navigation --> <nav class="hidden lg:flex space-x-6"> <a href="index.html" class="nav-link">Inici</a> <a href="about.html" class="nav-link">Sobre mi</a> <a href="programacio.html" class="nav-link">Programaci&oacute;</a> <a href="metodologia.html" class="nav-link">Metodologia</a> <a href="recursos.html" class="nav-link">Recursos</a> <a href="autoria.html" class="nav-link">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="nav-link nav-active">Agra&iuml;ments</a> <a href="contact.html" class="nav-link">Contacte</a> </nav> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="lg:hidden text-white" type="button" aria-label="Obrir men&uacute;" aria-expanded="false"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button>
+      </div> <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="mobile-menu lg:hidden mt-4">
+        <div class="space-y-2"> <a href="index.html" class="block py-2 hover:text-blue-200">Inici</a> <a href="about.html" class="block py-2 hover:text-blue-200">Sobre mi</a> <a href="programacio.html" class="block py-2 hover:text-blue-200">Programaci&oacute;</a> <a href="metodologia.html" class="block py-2 hover:text-blue-200">Metodologia</a> <a href="recursos.html" class="block py-2 hover:text-blue-200">Recursos</a> <a href="autoria.html" class="block py-2 hover:text-blue-200">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="block py-2 hover:text-blue-200">Agra&iuml;ments</a> <a href="contact.html" class="block py-2 hover:text-blue-200">Contacte</a>
         </div>
-    </header>
-    <!-- Hero Section -->
-    <section class="hero-section text-white py-14 md:py-16 relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-20 rounded-full px-4 py-2 mb-6">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-5-4M9 20H2v-2a4 4 0 017-4m4 6v-2a4 4 0 00-8 0v2m8-10a4 4 0 11-8 0 4 4 0 018 0zm8 0a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                    <span class="text-sm font-medium tracking-wide">Agraïments</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">Agraïments</h1>
-                <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">Persones i projectes que han contribuït a construir FemPerAprendre</p>
-            </div>
+      </div>
+    </div> </header> <!-- Hero Section --> <section class="hero-section text-white py-8 md:py-10 relative">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-20 rounded-full px-4 py-2 mb-6"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-5-4M9 20H2v-2a4 4 0 017-4m4 6v-2a4 4 0 00-8 0v2m8-10a4 4 0 11-8 0 4 4 0 018 0zm8 0a3 3 0 11-6 0 3 3 0 016 0z"></path> </svg> <span class="text-sm font-medium tracking-wide">Agra&iuml;ments</span>
         </div>
-    </section>
-
-    <main class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <p class="text-gray-600 text-lg">
-                    Contingut pendent d’afegir.
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">Agra&iuml;ments
+        </h1>
+        <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
+          <br />
+        </p>
+      </div>
+    </div> </section> <main class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        <p data-start="246" data-end="523" class="PDq2pG_selectionAnchorContainer" style="text-align: justify; ">En primer lloc, m&rsquo;agradaria donar les gr&agrave;cies a <span data-start="294" data-end="308">Anna Casals</span>, perqu&egrave; va ser una de les primeres docents que em va fer sentir v&agrave;lida en aquesta professi&oacute;. En uns primers anys en qu&egrave; encara estava intentant trobar el meu lloc com a professora, aix&ograve; va significar molt per a mi.<span aria-hidden="true" class="PDq2pG_selectionAnchor"></span>
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="525" data-end="826" style="text-align: justify; ">A <span data-start="527" data-end="548">Meritxell Monteys</span>, per totes les hores que va dedicar a ajudar-me a repensar projectes i activitats, per&ograve; sobretot per totes les vegades que em va corregir quan m&rsquo;equivocava. Vaig aprendre molt d&rsquo;aquelles converses, de tornar sobre una activitat, q&uuml;estionar-la i pensar com pod&iacute;em fer-la millor.
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="828" data-end="1320" style="text-align: justify; ">A Clara Casas, la meua companya durant aquells anys i, probablement, la persona amb qui m&eacute;s hores he passat pensant, repensant i dissenyant activitats. De fet, els projectes que formen part de <em data-start="571" data-end="589">Fem per Aprendre</em> encara conserven<span> <span data-start="607" data-end="734">tant el fil conductor d&rsquo;aquells projectes com moltes de les activitats que vam construir juntes. I per aix&ograve; el nom del web.</span></span>
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="1843" data-end="2059" style="text-align: justify;">A <span data-start="1845" data-end="1860">Laura Peric</span>, per fer-me costat durant tots aquells anys. I, en general, a tots els companys i companyes de <span data-start="1956" data-end="1972">Can Periquet</span>, per l&rsquo;acompanyament, les converses i tot el que vaig poder aprendre al vostre costat.&nbsp;
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="2061" data-end="2627" style="text-align: justify;">Tamb&eacute; voldria donar les gr&agrave;cies a tots aquells docents que decideixen <span data-start="2131" data-end="2172">compartir els seus materials en obert</span>. Moltes vegades preparem les nostres classes a partir d&rsquo;una idea que alg&uacute; altre va decidir compartir un dia. Especialment, a <span data-start="2298" data-end="2316">Jordi Dom&egrave;nech</span>, que ha sigut i continua sent un dels meus grans referents en did&agrave;ctica de les ci&egrave;ncies en catal&agrave;. Una part de la meua manera d&rsquo;entendre l&rsquo;ensenyament de les ci&egrave;ncies tamb&eacute; s&rsquo;ha constru&iuml;t llegint-lo, utilitzant alguns dels seus recursos i repensant les meues pr&ograve;pies activitats a partir de les seues propostes.
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="2629" data-end="2860" style="text-align: justify;">I, finalment, a tots els docents que, des de les seues aules, dediquen una part del seu dia a dia a pensar qu&egrave; poden canviar, adaptar o millorar perqu&egrave; el seu alumnat aprenga un poc millor.
+        </p>
+        <p class="text-gray-600 text-lg">
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="2284" data-end="2386" class="PDq2pG_selectionAnchorContainer"><span data-start="2284" data-end="2386">I tamb&eacute; al meu Joan, per muntar-me aquest web. Sense ell, tot aix&ograve; hauria sigut molt m&eacute;s dif&iacute;cil.</span><span aria-hidden="true" class="PDq2pG_selectionAnchor"></span>
+        </p>
+        <p data-start="2388" data-end="2463">
+        </p>
+        <p>&nbsp;
+        </p>
+        <p data-start="2862" data-end="2937" style="text-align: justify; "><strong data-start="2862" data-end="2937">A tots i totes, gr&agrave;cies per contribuir a fer una escola p&uacute;blica millor.</strong>
+        </p>
+        <p>&nbsp;
+        </p>
+        <p>
+          <br />
+        </p>
+      </div>
+    </div> </main> <!-- Footer --> <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10"> <!-- Marca -->
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-11 h-11 flex items-center justify-center flex-shrink-0"> <img src="https://mural.uv.es/manapu/recursos/Logo1.png" alt="FemPerAprendre" class="w-full h-full object-contain" />
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold">FemPerAprendre
+                </h4>
+                <p class="text-sm text-gray-400">Biologia i Geologia a l'ESO
                 </p>
+              </div>
             </div>
+            <p class="text-gray-400 leading-relaxed text-sm"> Una proposta did&agrave;ctica competencial basada en projectes i en valenci&agrave;.
+            </p>
+          </div> <!-- La proposta -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">La proposta
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="programacio.html" class="hover:text-white transition-colors">Programaci&oacute;</a></li>
+              <li><a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a></li>
+              <li><a href="recursos.html" class="hover:text-white transition-colors">Recursos</a></li>
+            </ul>
+          </div> <!-- FemPerAprendre -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">FemPerAprendre
+            </h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
+              <li><a href="about.html" class="hover:text-white transition-colors">Sobre mi</a></li>
+              <li><a href="autoria.html" class="hover:text-white transition-colors">Autoria i llic&egrave;ncia</a></li>
+              <li><a href="agraiments.html" class="hover:text-white transition-colors">Agra&iuml;ments</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contacte</a></li>
+            </ul>
+          </div> <!-- Recursos -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Recursos
+            </h4>
+            <p class="text-gray-400 text-sm leading-relaxed"> Materials de Biologia i Geologia preparats per portar directament a l&rsquo;aula.
+            </p>
+          </div>
         </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-                    <!-- Marca -->
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="bg-white bg-opacity-10 p-2 rounded-lg">
-                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <rect x="4" y="10" width="16" height="8" rx="1"/>
-                                    <circle cx="8" cy="8" r="1.5"/>
-                                    <circle cx="12" cy="8" r="1.5"/>
-                                    <circle cx="16" cy="8" r="1.5"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold">FemPerAprendre</h4>
-                                <p class="text-sm text-gray-400">Biologia i Geologia a l'ESO</p>
-                            </div>
-                        </div>
-
-                        <p class="text-gray-400 leading-relaxed text-sm">
-                            Una proposta didàctica competencial basada en projectes i en valencià.
-                        </p>
-                    </div>
-
-                    <!-- La proposta -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">La proposta</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="programacio.html" class="hover:text-white transition-colors">Programació</a></li>
-                            <li><a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a></li>
-                            <li><a href="recursos.html" class="hover:text-white transition-colors">Recursos</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- FemPerAprendre -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">FemPerAprendre</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
-                            <li><a href="about.html" class="hover:text-white transition-colors">Sobre mi</a></li>
-                            <li><a href="auditoria.html" class="hover:text-white transition-colors">Autoria i llicència</a></li>
-                            <li><a href="agraiments.html" class="hover:text-white transition-colors">Agraïments</a></li>
-                            <li><a href="contact.html" class="hover:text-white transition-colors">Contacte</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Recursos -->
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Recursos</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Materials de Biologia i Geologia preparats per portar directament a l’aula.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="border-t border-gray-700 mt-10 pt-6">
-                    <p class="text-center text-sm text-gray-400 leading-relaxed">
-                        © Marina Navarro Puchol · Fem per Aprendre · Continguts originals sota llicència
-                        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="font-semibold text-gray-200 hover:text-white underline underline-offset-2">
-                            CC BY-NC-SA 4.0
-                        </a>,
-                        excepte quan s’indique el contrari.
-                    </p>
-                </div>
-
-            </div>
+        <div class="border-t border-gray-700 mt-10 pt-6">
+          <p class="text-center text-sm text-gray-400 leading-relaxed"> &copy; Marina Navarro Puchol &middot; Fem per Aprendre &middot; Continguts originals sota llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-200 hover:text-white underline underline-offset-2"> CC BY-NC-SA 4.0 </a>, excepte quan s&rsquo;indique el contrari.
+          </p>
         </div>
-    </footer>
-
-    <script>
+      </div>
+    </div> </footer>
+    <script type="text/javascript">
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -339,25 +156,26 @@
         // Desktop dropdown functionality
         document.querySelectorAll('.group').forEach(group => {
             const dropdown = group.querySelector('.dropdown');
-            
+
             group.addEventListener('mouseenter', () => {
                 dropdown.classList.add('show');
             });
-            
+
             group.addEventListener('mouseleave', () => {
                 dropdown.classList.remove('show');
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96ae1282e6191ba7',t:'MTc1NDQ3ODQ2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-<script id="fpa-mobile-menu-fix">
+    <script type="text/javascript">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96ae1282e6191ba7',t:'MTc1NDQ3ODQ2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='https://disco.uv.es/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+    </script>
+    <script type="text/javascript" id="fpa-mobile-menu-fix">
 document.addEventListener('DOMContentLoaded', function () {
     const oldButton = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
 
     if (!oldButton || !menu) return;
 
-    // El clon conserva HTML, classes i atributs, però NO els listeners JS antics.
+    // El clon conserva HTML, classes i atributs, per&ograve; NO els listeners JS antics.
     const button = oldButton.cloneNode(true);
     oldButton.parentNode.replaceChild(button, oldButton);
 
@@ -379,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
