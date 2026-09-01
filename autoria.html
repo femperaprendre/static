@@ -1,407 +1,188 @@
 <!doctype html>
-<html lang="ca">
- <head><meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autoria i llicència | Fem per Aprendre</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #1e2448;
-      --blue: #6278e8;
-      --violet: #7546b6;
-      --paper: #f7f8ff;
-      --line: #e0e5f5;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "DM Sans", sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-    }
-
-    .site-shell { width: 100%; overflow: hidden; }
-    .topbar { background: linear-gradient(100deg, #607be9 0%, #7447b6 100%); }
-    .hero { background: linear-gradient(112deg, #667deb 0%, #7245b4 100%); }
-    .page-width {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-
-    .glass-link {
-      color: rgba(255,255,255,.85);
-      transition: color .2s ease;
-    }
-
-    .glass-link:hover,
-    .glass-link:focus {
-      color: #fff;
-      outline: none;
-    }
-
-    .nav-anchor {
-      color: #58617f;
-      border-bottom: 2px solid transparent;
-      transition: .2s ease;
-    }
-
-    .nav-anchor:hover,
-    .nav-anchor:focus {
-      color: #694fc0;
-      border-bottom-color: #694fc0;
-      outline: none;
-    }
-
-    .section-card {
-      background: #fff;
-      border: 1px solid #e7e9f5;
-      box-shadow: 0 12px 35px rgba(62,70,135,.08);
-      border-radius: 20px;
-    }
-
-    .section-marker {
-      width: 42px;
-      height: 42px;
-      flex: 0 0 auto;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: #edeaff;
-      color: #674ec6;
-    }
-
-    .license-note {
-      border-left: 4px solid #6b55c9;
-      background: linear-gradient(90deg, #f0f1ff, #faf7ff);
-    }
-
-    .citation-card {
-      border: 1px dashed #b9b9dc;
-      background: #fffefb;
-      box-shadow: inset 0 0 0 4px #faf8f1;
-    }
-
-    .cc-link {
-      color: #4e3aa6;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    .cc-link:hover,
-    .cc-link:focus {
-      color: #2f2476;
-      outline: 2px solid #bdb5f5;
-      outline-offset: 3px;
-      border-radius: 3px;
-    }
-
-    .reveal {
-      animation: rise-in .55s ease both;
-    }
-
-    .reveal-delay { animation-delay: .12s; }
-
-    @keyframes rise-in {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 700px) {
-      .page-width {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .desktop-nav { display: none; }
-      .mobile-toggle { display: inline-flex; }
-      .hero-copy {
-        padding-top: 48px;
-        padding-bottom: 50px;
-      }
-    }
-
-    @media (min-width: 701px) {
-      .mobile-toggle { display: none; }
-      .mobile-nav { display: none !important; }
-    }
-  
-        /* Header unificat: mateix estil visual que programacio.html */
-        .site-main-header { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .nav-link { position: relative; transition: color 0.3s ease; }
-        .nav-link:hover { color: #e0e7ff; }
-        .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; }
-        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .mobile-menu.show { max-height: 600px; }
-
-    
-    .hero-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        position: relative;
-        overflow: hidden;
-        font-family: 'Inter', sans-serif;
-    }
-
-    .hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    }
-
-  </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
- <body data-template-id="__page-root">
-  <div class="site-shell">
-   <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white bg-opacity-20 p-2 rounded-lg">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <rect x="4" y="10" width="16" height="8" rx="1" fill="currentColor"/>
-                            <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
-                            <circle cx="12" cy="8" r="1.5" fill="currentColor"/>
-                            <circle cx="16" cy="8" r="1.5" fill="currentColor"/>
-                            <rect x="4" y="10" width="16" height="2" fill="white" opacity="0.2"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold">FemPerAprendre</h1>
-                        <p class="text-sm opacity-90">Recursos i formació docent</p>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex space-x-6">
-                    <a href="index.html" class="nav-link">Inici</a>
-                    <a href="about.html" class="nav-link">Sobre mi</a>
-                    <a href="programacio.html" class="nav-link">Programació</a>
-                    <a href="metodologia.html" class="nav-link">Metodologia</a>
-                    <a href="recursos.html" class="nav-link">Recursos</a>
-                    <a href="auditoria.html" class="nav-link nav-active">Autoria i llicència</a>
-                    <a href="agraiments.html" class="nav-link">Agraïments</a>
-                    <a href="contact.html" class="nav-link">Contacte</a>
-                </nav>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white" type="button" aria-label="Obrir menú" aria-expanded="false">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autoria i llic&egrave;ncia | Fem per Aprendre</title>
+    <script type="text/javascript" src="https://cdn.tailwindcss.com/3.4.17">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js">
+    </script> <style> :root { --ink: #1e2448; --blue: #6278e8; --violet: #7546b6; --paper: #f7f8ff; --line: #e0e5f5; } * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; font-family: "DM Sans", sans-serif; color: var(--ink); background: var(--paper); } .site-shell { width: 100%; overflow: hidden; } .topbar { background: linear-gradient(100deg, #607be9 0%, #7447b6 100%); } .hero { background: linear-gradient(112deg, #667deb 0%, #7245b4 100%); } .page-width { width: 100%; max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; } .glass-link { color: rgba(255,255,255,.85); transition: color .2s ease; } .glass-link:hover, .glass-link:focus { color: #fff; outline: none; } .nav-anchor { color: #58617f; border-bottom: 2px solid transparent; transition: .2s ease; } .nav-anchor:hover, .nav-anchor:focus { color: #694fc0; border-bottom-color: #694fc0; outline: none; } .section-card { background: #fff; border: 1px solid #e7e9f5; box-shadow: 0 12px 35px rgba(62,70,135,.08); border-radius: 20px; } .section-marker { width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 13px; background: #edeaff; color: #674ec6; } .license-note { border-left: 4px solid #6b55c9; background: linear-gradient(90deg, #f0f1ff, #faf7ff); } .citation-card { border: 1px dashed #b9b9dc; background: #fffefb; box-shadow: inset 0 0 0 4px #faf8f1; } .cc-link { color: #4e3aa6; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; } .cc-link:hover, .cc-link:focus { color: #2f2476; outline: 2px solid #bdb5f5; outline-offset: 3px; border-radius: 3px; } .reveal { animation: rise-in .55s ease both; } .reveal-delay { animation-delay: .12s; } @keyframes rise-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } } @media (max-width: 700px) { .page-width { padding-left: 16px; padding-right: 16px; } .desktop-nav { display: none; } .mobile-toggle { display: inline-flex; } .hero-copy { padding-top: 48px; padding-bottom: 50px; } } @media (min-width: 701px) { .mobile-toggle { display: none; } .mobile-nav { display: none !important; } } /* Header unificat: mateix estil visual que programacio.html */ .site-main-header { font-family: 'Inter', sans-serif; }
+.site-main-header h1,
+.site-main-header p,
+.site-main-header nav,
+.site-main-header a,
+.site-main-header button { font-family: 'Inter', sans-serif; } .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); } .nav-link { position: relative; transition: color 0.3s ease; } .nav-link:hover { color: #e0e7ff; } .nav-active { border-bottom: 2px solid #fde047; padding-bottom: 0.25rem; color: white; } .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; } .mobile-menu.show { max-height: 600px; } .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden; font-family: 'Inter', sans-serif; } .hero-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternunits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"></pattern></defs><rect width="100" height="100" fill="url(%23grain)"></svg>'); } </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+  </head>
+  <body data-template-id="__page-root">
+    <div class="site-shell"> <header class="gradient-bg text-white shadow-lg sticky top-0 z-50 site-main-header">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 flex items-center justify-center flex-shrink-0"> <img src="https://mural.uv.es/manapu/recursos/Logo1.png" alt="FemPerAprendre" class="w-full h-full object-contain" />
             </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="mobile-menu lg:hidden mt-4">
-                <div class="space-y-2">
-                    <a href="index.html" class="block py-2 hover:text-blue-200">Inici</a>
-                    <a href="about.html" class="block py-2 hover:text-blue-200">Sobre mi</a>
-                    <a href="programacio.html" class="block py-2 hover:text-blue-200">Programació</a>
-                    <a href="metodologia.html" class="block py-2 hover:text-blue-200">Metodologia</a>
-                    <a href="recursos.html" class="block py-2 hover:text-blue-200">Recursos</a>
-                    <a href="auditoria.html" class="block py-2 hover:text-blue-200">Autoria i llicència</a>
-                    <a href="agraiments.html" class="block py-2 hover:text-blue-200">Agraïments</a>
-                    <a href="contact.html" class="block py-2 hover:text-blue-200">Contacte</a>
-                </div>
+            <div>
+              <h1 class="text-2xl font-bold">FemPerAprendre
+              </h1>
+              <p class="text-sm opacity-90">Biologia i Geologia per a l&rsquo;ESO
+              </p>
             </div>
+          </div> <!-- Desktop Navigation --> <nav class="hidden lg:flex space-x-6"> <a href="index.html" class="nav-link">Inici</a> <a href="about.html" class="nav-link">Sobre mi</a> <a href="programacio.html" class="nav-link">Programaci&oacute;</a> <a href="metodologia.html" class="nav-link">Metodologia</a> <a href="recursos.html" class="nav-link">Recursos</a> <a href="autoria.html" class="nav-link nav-active">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="nav-link">Agra&iuml;ments</a> <a href="contact.html" class="nav-link">Contacte</a> </nav> <!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="lg:hidden text-white" type="button" aria-label="Obrir men&uacute;" aria-expanded="false"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button>
+        </div> <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden mt-4">
+          <div class="space-y-2"> <a href="index.html" class="block py-2 hover:text-blue-200">Inici</a> <a href="about.html" class="block py-2 hover:text-blue-200">Sobre mi</a> <a href="programacio.html" class="block py-2 hover:text-blue-200">Programaci&oacute;</a> <a href="metodologia.html" class="block py-2 hover:text-blue-200">Metodologia</a> <a href="recursos.html" class="block py-2 hover:text-blue-200">Recursos</a> <a href="autoria.html" class="block py-2 hover:text-blue-200">Autoria i llic&egrave;ncia</a> <a href="agraiments.html" class="block py-2 hover:text-blue-200">Agra&iuml;ments</a> <a href="contact.html" class="block py-2 hover:text-blue-200">Contacte</a>
+          </div>
         </div>
-    </header>
-   <main>
-        <!-- Hero Section -->
-    <section class="hero-section text-white py-14 md:py-16 relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-20 rounded-full px-4 py-2 mb-6">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm6 0c0 1.657-1.343 3-3 3-.35 0-.686-.06-1-.17M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2m2-6a4 4 0 014 4v2"/>
-                    </svg>
-                    <span class="text-sm font-medium tracking-wide">Autoria i llicència</span>
-                </div>
-
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5">
-                    Autoria i llicència
-                </h1>
-
-                <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto leading-relaxed">
-                    Informació sobre l’autoria dels materials, les condicions d’ús i la manera correcta de citar-los
-                </p>
-            </div>
+      </div> </header> <main> <!-- Hero Section --> <section class="hero-section text-white py-8 md:py-10 relative">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 bg-white bg-opacity-15 border border-white border-opacity-20 rounded-full px-4 py-2 mb-6"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm6 0c0 1.657-1.343 3-3 3-.35 0-.686-.06-1-.17M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2m2-6a4 4 0 014 4v2"></path> </svg> <span class="text-sm font-medium tracking-wide">Autoria i llic&egrave;ncia</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-5"> Autoria i llic&egrave;ncia
+          </h1>
+          <p class="text-base md:text-lg lg:text-xl opacity-90 max-w-none mx-auto leading-relaxed lg:whitespace-nowrap"> Informaci&oacute; sobre l&rsquo;autoria dels materials, les condicions d&rsquo;&uacute;s i la manera correcta de citar-los
+          </p>
         </div>
-    </section>
-    <nav class="bg-white border-b border-slate-100 sticky top-0 z-10 shadow-sm" aria-label="Seccions d'autoria i llicència">
-     <div class="page-width flex gap-5 md:gap-8 overflow-x-auto py-3 whitespace-nowrap text-sm">
-      <a data-template-id="subnav-authorship" class="canva-link nav-anchor no-underline pb-1" href="#autoria">Autoria</a> <a data-template-id="subnav-license" class="canva-link nav-anchor no-underline pb-1" href="#llicencia">Llicència</a> <a data-template-id="subnav-third-party" class="canva-link nav-anchor no-underline pb-1" href="#tercers">Materials de tercers</a> <a data-template-id="subnav-citation" class="canva-link nav-anchor no-underline pb-1" href="#citar">Com citar</a>
-     </div>
-    </nav>
-    <section id="autoria" class="page-width py-12">
-     <article data-template-id="authorship-section" class="canva-section section-card p-6 md:p-9 reveal">
+      </div> </section> <nav class="bg-white border-b border-slate-100 sticky top-0 z-10 shadow-sm" aria-label="Seccions dautoria i llic&egrave;ncia">
+      <div class="page-width flex gap-5 md:gap-8 overflow-x-auto py-3 whitespace-nowrap text-sm"> <a data-template-id="subnav-authorship" class="canva-link nav-anchor no-underline pb-1" href="#autoria">Autoria</a> <a data-template-id="subnav-license" class="canva-link nav-anchor no-underline pb-1" href="#llicencia">Llic&egrave;ncia</a> <a data-template-id="subnav-third-party" class="canva-link nav-anchor no-underline pb-1" href="#tercers">Materials de tercers</a> <a data-template-id="subnav-citation" class="canva-link nav-anchor no-underline pb-1" href="#citar">Com citar</a>
+      </div> </nav> <section id="autoria" class="page-width py-12"> <article data-template-id="authorship-section" class="canva-section section-card p-6 md:p-9 reveal">
       <div class="flex items-start gap-4">
-       <div class="section-marker"><i data-lucide="pen-line" class="w-5 h-5"></i>
-       </div>
-       <div>
-        <p data-template-id="authorship-kicker" class="canva-text text-sm font-semibold text-violet-600">1. Autoria</p>
-       </div>
-      </div>
-      <div class="mt-7 max-w-4xl space-y-5 leading-7">
-       <p data-template-id="authorship-text-one" class="canva-text">La proposta Fem per Aprendre i els materials originals publicats en aquesta web han estat elaborats per Marina Navarro Puchol.</p>
-       <p data-template-id="authorship-text-two" class="canva-text">Els projectes s’han dissenyat, revisat i millorat al llarg dels anys a partir de la pràctica docent, amb l’objectiu de facilitar una manera competencial d’ensenyar Biologia i Geologia a l’ESO.</p>
-       <p data-template-id="authorship-text-three" class="canva-text">Quan un material incorpora aportacions, adaptacions o recursos d’altres autors, aquesta autoria s’indica de manera específica dins del document o del projecte corresponent.</p>
-      </div>
-     </article>
-    </section>
-    <section id="llicencia" class="page-width pb-12">
-     <article data-template-id="license-section" class="canva-section section-card p-6 md:p-9 reveal reveal-delay">
-      <div class="flex items-start gap-4">
-       <div class="section-marker"><i data-lucide="badge-check" class="w-5 h-5"></i>
-       </div>
-       <div>
-        <p data-template-id="license-kicker" class="canva-text text-sm font-semibold text-violet-600">2. Llicència d’ús</p>
-       </div>
-      </div>
-      <div class="mt-7 max-w-4xl space-y-5 leading-7">
-       <p data-template-id="license-text-one" class="canva-text">Els continguts originals de Fem per Aprendre es publiquen sota una llicència Creative Commons Reconeixement – NoComercial – CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).</p>
-       <div data-template-id="license-note" class="canva-banner license-note rounded-r-xl p-5">
-        <p data-template-id="license-note-text" class="canva-text font-semibold leading-7">Pots compartir i adaptar els materials sempre que reconegues l’autoria, no en faces un ús comercial i mantingues la mateixa llicència en les obres derivades.</p>
-       </div>
-       <p data-template-id="license-text-two" class="canva-text">La llicència s’aplica als continguts originals creats per l’autora. No s’estén automàticament a imatges, textos, activitats o altres elements de tercers que puguen aparéixer als materials.</p>
-       <p data-template-id="license-text-three" class="canva-text">Quan s’indique una condició d’ús diferent en un recurs concret, prevaldrà la llicència o l’avís associat a aquell recurs.</p><a data-template-id="cc-license-link" class="canva-link cc-link inline-flex items-center gap-2 font-semibold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer"> <i data-lucide="external-link" class="w-4 h-4"></i> <span data-template-id="cc-license-link-text" class="canva-text">Consultar la llicència CC BY-NC-SA 4.0</span> </a>
-      </div>
-     </article>
-    </section>
-    <section id="tercers" class="page-width pb-12">
-     <article data-template-id="third-party-section" class="canva-section section-card p-6 md:p-9">
-      <div class="flex items-start gap-4">
-       <div class="section-marker"><i data-lucide="users-round" class="w-5 h-5"></i>
-       </div>
-       <div>
-        <p data-template-id="third-party-kicker" class="canva-text text-sm font-semibold text-violet-600">3. Materials de tercers</p>
-       </div>
-      </div>
-      <div class="mt-7 max-w-4xl space-y-5 leading-7">
-       <p data-template-id="third-party-text-one" class="canva-text">Alguns projectes incorporen recursos, idees, activitats o adaptacions procedents d’altres docents i fonts educatives. En aquests casos es manté el reconeixement de l’autoria original sempre que és possible.</p>
-       <p data-template-id="third-party-text-two" class="canva-text">Aquests materials conserven els drets i les condicions d’ús que els corresponguen segons la seua font original i no queden coberts per la llicència general de Fem per Aprendre si s’indica el contrari.</p>
-      </div>
-     </article>
-    </section>
-    <section id="adaptacions" class="page-width pb-12">
-     <article data-template-id="adaptations-section" class="canva-section section-card p-6 md:p-9">
-      <div class="flex items-start gap-4">
-       <div class="section-marker"><i data-lucide="git-branch" class="w-5 h-5"></i>
-       </div>
-       <div>
-        <p data-template-id="adaptations-kicker" class="canva-text text-sm font-semibold text-violet-600">4. Adaptacions</p>
-       </div>
-      </div>
-      <div class="mt-7 max-w-4xl space-y-5 leading-7">
-       <p data-template-id="adaptations-text-one" class="canva-text">Quan un material és una adaptació d’una proposta prèvia, s’indica l’autoria de la proposta original i, quan correspon, que el material ha estat modificat o adaptat.</p>
-       <p data-template-id="adaptations-text-two" class="canva-text">Això permet diferenciar clarament els materials originals de Fem per Aprendre de les adaptacions o aportacions d’altres persones.</p>
-      </div>
-     </article>
-    </section>
-    <section id="citar" class="page-width pb-14">
-     <article data-template-id="citation-section" class="canva-section section-card p-6 md:p-9">
-      <div class="flex items-start gap-4">
-       <div class="section-marker"><i data-lucide="quote" class="w-5 h-5"></i>
-       </div>
-       <div>
-        <p data-template-id="citation-kicker" class="canva-text text-sm font-semibold text-violet-600">5. Com citar els materials</p>
-       </div>
-      </div>
-      <p data-template-id="citation-intro" class="canva-text mt-7 max-w-4xl leading-7">Si utilitzes o comparteixes aquests materials, et proposem citar-los d’una manera senzilla i clara.</p>
-      <div class="grid md:grid-cols-2 gap-5 mt-6">
-       <article data-template-id="citation-general-card" class="canva-card citation-card rounded-xl p-6">
-        <p data-template-id="citation-general-label" class="canva-text text-sm font-bold text-violet-700">Material original</p>
-        <p data-template-id="citation-general-text" class="canva-text mt-4 leading-7">Navarro Puchol, Marina. Fem per Aprendre. Material educatiu de Biologia i Geologia. Llicència CC BY-NC-SA 4.0.</p>
-       </article>
-       <article data-template-id="citation-adaptation-card" class="canva-card citation-card rounded-xl p-6">
-        <p data-template-id="citation-adaptation-label" class="canva-text text-sm font-bold text-violet-700">Material adaptat</p>
-        <p data-template-id="citation-adaptation-text" class="canva-text mt-4 leading-7">Indica l’autoria original del recurs i afegeix que es tracta d’una adaptació realitzada per Marina Navarro Puchol per a Fem per Aprendre.</p>
-       </article>
-      </div>
-     </article>
-    </section>
-   </main>
-       <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="bg-white bg-opacity-10 p-2 rounded-lg">
-                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <rect x="4" y="10" width="16" height="8" rx="1"/>
-                                    <circle cx="8" cy="8" r="1.5"/>
-                                    <circle cx="12" cy="8" r="1.5"/>
-                                    <circle cx="16" cy="8" r="1.5"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-semibold">FemPerAprendre</h4>
-                                <p class="text-sm text-gray-400">Biologia i Geologia a l'ESO</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-400 leading-relaxed text-sm">
-                            Una proposta didàctica competencial basada en projectes i en valencià.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">La proposta</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="programacio.html" class="hover:text-white transition-colors">Programació</a></li>
-                            <li><a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a></li>
-                            <li><a href="recursos.html" class="hover:text-white transition-colors">Recursos</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">FemPerAprendre</h4>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
-                            <li><a href="about.html" class="hover:text-white transition-colors">Sobre mi</a></li>
-                            <li><a href="auditoria.html" class="hover:text-white transition-colors">Autoria i llicència</a></li>
-                            <li><a href="contact.html" class="hover:text-white transition-colors">Contacte</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="text-lg font-semibold mb-4">Recursos</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Materials de Biologia i Geologia preparats per portar directament a l’aula.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-700 mt-10 pt-6">
-                    <p class="text-center text-sm text-gray-400 leading-relaxed">
-                        © Marina Navarro Puchol · Fem per Aprendre · Continguts originals sota llicència
-                        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca"
-                           target="_blank" rel="noopener noreferrer"
-                           class="font-semibold text-gray-200 hover:text-white underline underline-offset-2">
-                            CC BY-NC-SA 4.0
-                        </a>,
-                        excepte quan s’indique el contrari.
-                    </p>
-                </div>
-            </div>
+        <div class="section-marker"><em data-lucide="pen-line" class="w-5 h-5"></em>
         </div>
-    </footer>
-  </div>
-  <script>
+        <div>
+          <p data-template-id="authorship-kicker" class="canva-text text-sm font-semibold text-violet-600"><font size="5">1. Autoria</font>
+          </p>
+        </div>
+      </div>
+      <div class="mt-7 max-w-4xl space-y-5 leading-7">
+        <p data-template-id="authorship-text-one" class="canva-text">La proposta Fem per Aprendre i els materials originals publicats en aquesta web han estat elaborats per Marina Navarro Puchol.
+        </p>
+        <p data-template-id="authorship-text-two" class="canva-text">Els projectes s&rsquo;han dissenyat, revisat i millorat al llarg dels anys a partir de la pr&agrave;ctica docent, amb l&rsquo;objectiu de facilitar una manera competencial d&rsquo;ensenyar Biologia i Geologia a l&rsquo;ESO.
+        </p>
+        <p data-template-id="authorship-text-three" class="canva-text">Quan un material incorpora aportacions, adaptacions o recursos d&rsquo;altres autors, aquesta autoria s&rsquo;indica de manera espec&iacute;fica dins del document o del projecte corresponent.
+        </p>
+      </div> </article> </section> <section id="llicencia" class="page-width pb-12"> <article data-template-id="license-section" class="canva-section section-card p-6 md:p-9 reveal reveal-delay">
+      <div class="flex items-start gap-4">
+        <div class="section-marker"><em data-lucide="badge-check" class="w-5 h-5"></em>
+        </div>
+        <div>
+          <p data-template-id="license-kicker" class="canva-text text-sm font-semibold text-violet-600"><font size="5">2. Llic&egrave;ncia d&rsquo;&uacute;s</font>
+          </p>
+        </div>
+      </div>
+      <div class="mt-7 max-w-4xl space-y-5 leading-7">
+        <p data-template-id="license-text-one" class="canva-text">Els continguts originals de Fem per Aprendre es publiquen sota una llic&egrave;ncia Creative Commons Reconeixement &ndash; NoComercial &ndash; CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).
+        </p>
+        <div data-template-id="license-note" class="canva-banner license-note rounded-r-xl p-5">
+          <p data-template-id="license-note-text" class="canva-text font-semibold leading-7">Pots compartir i adaptar els materials sempre que reconegues l&rsquo;autoria, no en faces un &uacute;s comercial i mantingues la mateixa llic&egrave;ncia en les obres derivades.
+          </p>
+        </div>
+        <p data-template-id="license-text-two" class="canva-text">La llic&egrave;ncia s&rsquo;aplica als continguts originals creats per l&rsquo;autora. No s&rsquo;est&eacute;n autom&agrave;ticament a imatges, textos, activitats o altres elements de tercers que puguen apar&eacute;ixer als materials.
+        </p>
+        <p data-template-id="license-text-three" class="canva-text">Quan s&rsquo;indique una condici&oacute; d&rsquo;&uacute;s diferent en un recurs concret, prevaldr&agrave; la llic&egrave;ncia o l&rsquo;av&iacute;s associat a aquell recurs.
+        </p><a data-template-id="cc-license-link" class="canva-link cc-link inline-flex items-center gap-2 font-semibold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer"> <em data-lucide="external-link" class="w-4 h-4"></em> <span data-template-id="cc-license-link-text" class="canva-text">Consultar la llic&egrave;ncia CC BY-NC-SA 4.0</span> </a>
+      </div> </article> </section> <section id="tercers" class="page-width pb-12"> <article data-template-id="third-party-section" class="canva-section section-card p-6 md:p-9">
+      <div class="flex items-start gap-4">
+        <div class="section-marker"><em data-lucide="users-round" class="w-5 h-5"></em>
+        </div>
+        <div>
+          <p data-template-id="third-party-kicker" class="canva-text text-sm font-semibold text-violet-600"><font size="5">3. Materials de tercers</font>
+          </p>
+        </div>
+      </div>
+      <div class="mt-7 max-w-4xl space-y-5 leading-7">
+        <p data-template-id="third-party-text-one" class="canva-text">Alguns projectes incorporen recursos, idees, activitats o adaptacions procedents d&rsquo;altres docents i fonts educatives. En aquests casos es mant&eacute; el reconeixement de l&rsquo;autoria original sempre que &eacute;s possible.
+        </p>
+        <p data-template-id="third-party-text-two" class="canva-text">Aquests materials conserven els drets i les condicions d&rsquo;&uacute;s que els corresponguen segons la seua font original i no queden coberts per la llic&egrave;ncia general de Fem per Aprendre si s&rsquo;indica el contrari.
+        </p>
+      </div> </article> </section> <section id="adaptacions" class="page-width pb-12"> <article data-template-id="adaptations-section" class="canva-section section-card p-6 md:p-9">
+      <div class="flex items-start gap-4">
+        <div class="section-marker"><em data-lucide="git-branch" class="w-5 h-5"></em>
+        </div>
+        <div>
+          <p data-template-id="adaptations-kicker" class="canva-text text-sm font-semibold text-violet-600"><font size="5">4. Adaptacions</font>
+          </p>
+        </div>
+      </div>
+      <div class="mt-7 max-w-4xl space-y-5 leading-7">
+        <p data-template-id="adaptations-text-one" class="canva-text">Quan un material &eacute;s una adaptaci&oacute; d&rsquo;una proposta pr&egrave;via, s&rsquo;indica l&rsquo;autoria de la proposta original i, quan correspon, que el material ha estat modificat o adaptat.
+        </p>
+        <p data-template-id="adaptations-text-two" class="canva-text">Aix&ograve; permet diferenciar clarament els materials originals de Fem per Aprendre de les adaptacions o aportacions d&rsquo;altres persones.
+        </p>
+      </div> </article> </section> <section id="citar" class="page-width pb-14"> <article data-template-id="citation-section" class="canva-section section-card p-6 md:p-9">
+      <div class="flex items-start gap-4">
+        <div class="section-marker"><em data-lucide="quote" class="w-5 h-5"></em>
+        </div>
+        <div>
+          <p data-template-id="citation-kicker" class="canva-text text-sm font-semibold text-violet-600"><font size="5">5. Com citar els materials</font>
+          </p>
+        </div>
+      </div>
+      <p data-template-id="citation-intro" class="canva-text mt-7 max-w-4xl leading-7">Si utilitzes o comparteixes aquests materials, et proposem citar-los d&rsquo;una manera senzilla i clara.
+      </p>
+      <div class="grid md:grid-cols-2 gap-5 mt-6"> <article data-template-id="citation-general-card" class="canva-card citation-card rounded-xl p-6">
+        <p data-template-id="citation-general-label" class="canva-text text-sm font-bold text-violet-700">Material original
+        </p>
+        <p data-template-id="citation-general-text" class="canva-text mt-4 leading-7">Navarro Puchol, Marina. Fem per Aprendre. Material educatiu de Biologia i Geologia. Llic&egrave;ncia CC BY-NC-SA 4.0.
+        </p> </article> <article data-template-id="citation-adaptation-card" class="canva-card citation-card rounded-xl p-6">
+        <p data-template-id="citation-adaptation-label" class="canva-text text-sm font-bold text-violet-700">Material adaptat
+        </p>
+        <p data-template-id="citation-adaptation-text" class="canva-text mt-4 leading-7">Indica l&rsquo;autoria original del recurs i afegeix que es tracta d&rsquo;una adaptaci&oacute; realitzada per Marina Navarro Puchol de la proposta Fem per Aprendre.
+        </p> </article>
+      </div> </article> </section> </main> <!-- Footer --> <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div>
+              <div class="flex items-center space-x-3 mb-4">
+                <div class="w-11 h-11 flex items-center justify-center flex-shrink-0"> <img src="https://mural.uv.es/manapu/recursos/Logo1.png" alt="FemPerAprendre" class="w-full h-full object-contain" />
+                </div>
+                <div>
+                  <h4 class="text-lg font-semibold">FemPerAprendre
+                  </h4>
+                  <p class="text-sm text-gray-400">Biologia i Geologia a l'ESO
+                  </p>
+                </div>
+              </div>
+              <p class="text-gray-400 leading-relaxed text-sm"> Una proposta did&agrave;ctica competencial basada en projectes i en valenci&agrave;.
+              </p>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">La proposta
+              </h4>
+              <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="programacio.html" class="hover:text-white transition-colors">Programaci&oacute;</a></li>
+                <li><a href="metodologia.html" class="hover:text-white transition-colors">Metodologia</a></li>
+                <li><a href="recursos.html" class="hover:text-white transition-colors">Recursos</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">FemPerAprendre
+              </h4>
+              <ul class="space-y-2 text-gray-400 text-sm">
+                <li><a href="index.html" class="hover:text-white transition-colors">Inici</a></li>
+                <li><a href="about.html" class="hover:text-white transition-colors">Sobre mi</a></li>
+                <li><a href="autoria.html" class="hover:text-white transition-colors">Autoria i llic&egrave;ncia</a></li>
+                <li><a href="contact.html" class="hover:text-white transition-colors">Contacte</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Recursos
+              </h4>
+              <p class="text-gray-400 text-sm leading-relaxed"> Materials de Biologia i Geologia preparats per portar directament a l&rsquo;aula.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 mt-10 pt-6">
+            <p class="text-center text-sm text-gray-400 leading-relaxed"> &copy; Marina Navarro Puchol &middot; Fem per Aprendre &middot; Continguts originals sota llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-200 hover:text-white underline underline-offset-2"> CC BY-NC-SA 4.0 </a>, excepte quan s&rsquo;indique el contrari.
+            </p>
+          </div>
+        </div>
+      </div> </footer>
+    </div>
+    <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', () => {
       if (window.lucide) lucide.createIcons();
 
@@ -420,16 +201,15 @@
         });
       }
     });
-  </script>
- 
-<script id="fpa-mobile-menu-fix">
+    </script>
+    <script type="text/javascript" id="fpa-mobile-menu-fix">
 document.addEventListener('DOMContentLoaded', function () {
     const oldButton = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
 
     if (!oldButton || !menu) return;
 
-    // El clon conserva HTML, classes i atributs, però NO els listeners JS antics.
+    // El clon conserva HTML, classes i atributs, per&ograve; NO els listeners JS antics.
     const button = oldButton.cloneNode(true);
     oldButton.parentNode.replaceChild(button, oldButton);
 
@@ -451,7 +231,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
