@@ -347,6 +347,14 @@ document.addEventListener('DOMContentLoaded', function () {
             frame.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
+
+    // Si venim d'una pàgina de projectes, obri automàticament el curs.
+    const curs = new URLSearchParams(window.location.search).get('curs');
+    const cursIndex = { '1': 0, '3': 1, '4': 2 };
+
+    if (Object.prototype.hasOwnProperty.call(cursIndex, curs) && buttons[cursIndex[curs]]) {
+        buttons[cursIndex[curs]].click();
+    }
 });
       </script>
 
